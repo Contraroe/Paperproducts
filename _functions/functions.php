@@ -1,5 +1,6 @@
 <?php
-	
+	$coll_id = $_REQUEST['coll_id'];
+	$coll_sub_id = $_REQUEST['coll_sub_id'];
 
 	function AllColl () {
 		include "_php/db_config.php";
@@ -33,20 +34,16 @@
 	}
 
 
-	function GetDesign ($coll, $colld) {
+	function GetDesign ($coll_id, $coll_sub_id) {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
 
-		$coll_id = $coll;
-		$coll_sub = $colld;
-
-		$result = mysqli_query($connect, " SELECT * FROM design WHERE coll_id = $coll ");
+		$result = mysqli_query($connect, " SELECT * FROM design WHERE coll_id = $coll_id ");
 		mysqli_close($connect);
 
 		$row = mysqli_fetch_row ($result);
 
 		echo "<ul>";
-
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[5]'><img src='_img/color/" . $row[5] . "_C.png'/></a></li>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[7]''><img src='_img/color/" . $row[7] . "_C.png'/></a></li>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[9]''><img src='_img/color/" . $row[9] . "_C.png'/></a></li>";
@@ -54,7 +51,21 @@
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[13]''><img src='_img/color/" . $row[13] . "_C.png'/></a></li>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[15]''><img src='_img/color/" . $row[15] . "_C.png'/></a></li>";
 		echo "</ul>";
-		echo "<div><img src='_img/collections/" . $coll_sub . ".png'/></div>";
+		echo "<div><img src='_img/collections/" . $coll_sub_id . ".png'/></div>";
 
 	}
+
+	function GetTech ($coll_id) {
+		include "_php/db_config.php";
+		include "_php/db_connect.php";
+
+		// $result = mysqli_query($connect, " SELECT * FROM design WHERE coll_id = $coll ");
+		// mysqli_close($connect);
+
+		// $row = mysqli_fetch_row ($result);
+
+		echo $coll_id;
+
+	}
+
 ?>
