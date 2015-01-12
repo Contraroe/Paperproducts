@@ -433,7 +433,10 @@ select
  *    Known issue: inner spacing remains in IE 6.
  */
 
-button,
+button
+    -webkit-appearance: button /* 2 */
+    cursor: pointer /* 3 */
+    *overflow: visible  /* 4 */
 html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"]

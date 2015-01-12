@@ -1,10 +1,10 @@
 <?php
-	$coll_id = $_REQUEST['coll_id'];
-	$coll_sub_id = $_REQUEST['coll_sub_id'];
+	
 
 	function AllColl () {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
+
 
 		echo "<ul>	<li class='home'><a href='index.php'>Home</a></li>
 				<li class='contact'><a href='contact.php'>Contact</a></li>
@@ -37,7 +37,7 @@
 	function GetDesign ($coll_id, $coll_sub_id) {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
-
+		
 		$result = mysqli_query($connect, " SELECT * FROM design WHERE coll_id = $coll_id ");
 		mysqli_close($connect);
 
