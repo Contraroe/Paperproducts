@@ -57,20 +57,7 @@ section #cont ul li, header #cont ul li {
   cursor: pointer;
 }
 
-/* line 56, ../__compass/sass/global.sass */
-#gnav {
-  background-color: #00c8c8;
-}
-
 /* line 58, ../__compass/sass/global.sass */
-#navtype {
-  width: 60px;
-  height: 60px;
-  background-color: #00c8c8;
-  float: right;
-}
-
-/* line 63, ../__compass/sass/global.sass */
 #tech {
   float: left;
   width: auto;
@@ -79,17 +66,17 @@ section #cont ul li, header #cont ul li {
   margin-right: 10px;
 }
 
-/* line 69, ../__compass/sass/global.sass */
+/* line 64, ../__compass/sass/global.sass */
 .active_1 {
   background-color: #00c8c8;
 }
 
-/* line 71, ../__compass/sass/global.sass */
+/* line 66, ../__compass/sass/global.sass */
 .active_0 {
   background-color: white;
 }
 
-/* line 73, ../__compass/sass/global.sass */
+/* line 70, ../__compass/sass/global.sass */
 #navb {
   width: 50%;
   float: left;
@@ -99,14 +86,14 @@ section #cont ul li, header #cont ul li {
   line-height: 150px;
   vertical-align: middle;
 }
-/* line 81, ../__compass/sass/global.sass */
+/* line 78, ../__compass/sass/global.sass */
 #navb a {
   color: white;
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 86, ../__compass/sass/global.sass */
+/* line 83, ../__compass/sass/global.sass */
 #navb #imgnav {
   position: relative;
   width: 30px;
@@ -118,22 +105,22 @@ section #cont ul li, header #cont ul li {
   border-radius: 16px;
   border: 1px solid white;
 }
-/* line 96, ../__compass/sass/global.sass */
+/* line 93, ../__compass/sass/global.sass */
 #navb #imgnav.imgnext {
   float: right;
   margin-right: 200px;
   margin-left: 30px;
 }
-/* line 101, ../__compass/sass/global.sass */
+/* line 98, ../__compass/sass/global.sass */
 #navb:hover a {
   color: black;
 }
-/* line 103, ../__compass/sass/global.sass */
+/* line 100, ../__compass/sass/global.sass */
 #navb:hover #imgnav {
   border: 1px solid black;
 }
 
-/* line 106, ../__compass/sass/global.sass */
+/* line 103, ../__compass/sass/global.sass */
 #navb.next a {
   text-align: right;
 }
