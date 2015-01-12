@@ -8,11 +8,12 @@
 		include "_php/db_connect.php";
 
 
-		echo "<div id='cont'><ul>	<li class='home'><a href='index.php'>Home</a></li>
-				<li class='home'>Collections</li>
+		echo "<div id='cont' class='mainnav'><ul>
+				<li class='home'><a href='index.php'>Home</a></li>
+				<li class='colltoglle'>Collections</li>
 				<li class='contact'><a href='contact.php'>Contact</a></li>
 			</ul></div>
-			<div id='cont'><ul>";
+			<div id='cont' class='collnav'><ul>";
 
 
 		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = '1'");
@@ -190,7 +191,7 @@
 		$num =mysqli_num_rows($techtype);
 		$row=mysqli_fetch_row($techtype);
 
-		echo "<h2>Size</h2>" ;
+		echo "<br><h2>Size</h2>" ;
 		echo "<div id='tech' class='active_" . html_entity_decode($row[3]) . "'>Lines</div>";
 		echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Squares</div>";
 		echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'> Lines / Notebook</div>";

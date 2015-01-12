@@ -7,6 +7,7 @@
 @import variables
 @import mixins
 @import queries
+@import mainnav
 
 // DESIGN
 // Base
@@ -15,7 +16,6 @@ html, body
 	margin: 0
 	height: 100%
 	min-width: 100%
-	// overflow: hidden
 	-webkit-font-smoothing: antialiased
 	font-smooth: always
 	color: black
@@ -29,11 +29,7 @@ html, body
 		text-decoration: none
 		color: $zwart_10
 
-img
-	background-color: $zwart_10
-
-
-section, header
+section
 	width: 100%
 	background: $zwart_1
 	#cont
@@ -43,6 +39,7 @@ section, header
 		margin: auto
 		overflow: auto
 		margin-bottom: 5px
+		z-index: 0
 		ul
 			display: block
 			float: left
@@ -53,6 +50,9 @@ section, header
 				margin: 5px
 				float: left
 				cursor: pointer
+
+// HEADER NAV COLLNAV
+@import mainnav
 
 // TECHNICAL INFORMATION
 #tech

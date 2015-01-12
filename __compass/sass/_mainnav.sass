@@ -1,0 +1,46 @@
+// header / cont .mainnav / ul li ~> 1.home 2.colltoglle 3.contact
+header
+	position: absolute
+	top: 0px
+	width: 100%
+	background: $zwart_10
+	height: 50px
+	margin-bottom: 65px
+	#cont.mainnav,
+	#cont.collnav
+		width: 1224px
+		background: $zwart_10
+		margin-bottom:  20px
+		margin: auto
+		overflow: auto
+		ul
+			display: block
+			float: left
+			color: $wit_10
+			li
+				display: block
+				height: 50px
+				overflow: hidden
+				float: left
+				cursor: pointer
+				line-height: 50px
+				padding: 0px 20px 0px 20px
+				color: $wit_10
+				&:hover
+					background-color: $turk_10	
+				a
+					color: $wit_10
+					display: block
+					height: 100%
+	#cont.collnav
+		background-color: $turk_10
+		// visibility: hidden
+		ul 
+			width: 100%
+			li 
+				width: 24%
+				padding: 0px
+				&:hover
+					background-color: $zwart_10	
+				a
+					margin-left: 20px
