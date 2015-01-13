@@ -1,9 +1,9 @@
 // MIXINS
-@mixin cover-img($img-uri)
+@mixin cover-img($img-uri, $position, $repeat,$size)
 	background-image: url($img-uri)
-	background-position: center
-	background-repeat: no-repeat
-	-webkit-background-size: 80%
-	-moz-background-size: 80%
-	-o-background-size: 80%
-	background-size: 80%
+	background-position: $position
+	background-repeat: $repeat
+	-webkit-background-size: $size
+	-moz-background-size: $size
+	-o-background-size: $size
+	background-size: $size

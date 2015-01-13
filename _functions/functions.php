@@ -1,7 +1,7 @@
 <?php
 	
 
-// COLLECTION
+// COLLECTION NAVIGATION
 
 	function AllColl () {
 		include "_php/db_config.php";
@@ -10,7 +10,7 @@
 
 		echo "<div id='cont' class='mainnav'><ul>
 				<li class='home'><a href='index.php'>Home</a></li>
-				<li class='colltoglle'>Collections</li>
+				<li class='colltoggle'>Collections</li>
 				<li class='contact'><a href='contact.php'>Contact</a></li>
 			</ul></div>
 			<div id='cont' class='collnav'><ul>";
@@ -75,7 +75,7 @@
 		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".png'/></div>";
 	}
 
-// TECHNICAL INFO
+
 	function ActiveType ($type_id) {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
@@ -89,6 +89,8 @@
 
 	}
 
+// TECHNICAL INFO
+//
 	function GetTech () {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
