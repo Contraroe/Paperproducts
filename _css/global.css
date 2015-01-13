@@ -256,10 +256,10 @@ header #cont.collnav ul li a {
   position: absolute;
   float: left;
   bottom: -40px;
-  margin-left: 100px;
+  margin-left: 140px;
   height: 460px;
   width: auto;
-  background-color: white;
+  background-color: #efefef;
   width: auto;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -288,50 +288,51 @@ header #cont.collnav ul li a {
   width: auto;
   transform: rotate(3deg);
   left: -25px;
+  background-color: white;
 }
-/* line 40, ../__compass/sass/_design.sass */
+/* line 41, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li,
 #design #cont.colltitle ul#back2 li {
   margin-right: 5px;
   cursor: default;
 }
-/* line 43, ../__compass/sass/_design.sass */
+/* line 44, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_2,
 #design #cont.colltitle ul#back2 li.fake_2 {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* line 45, ../__compass/sass/_design.sass */
+/* line 46, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_3,
 #design #cont.colltitle ul#back2 li.fake_3 {
   background-color: rgba(0, 0, 0, 0.2);
 }
-/* line 47, ../__compass/sass/_design.sass */
+/* line 48, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_4,
 #design #cont.colltitle ul#back2 li.fake_4 {
   background-color: rgba(0, 0, 0, 0.3);
 }
-/* line 49, ../__compass/sass/_design.sass */
+/* line 50, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_5,
 #design #cont.colltitle ul#back2 li.fake_5 {
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 51, ../__compass/sass/_design.sass */
+/* line 52, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_6,
 #design #cont.colltitle ul#back2 li.fake_6 {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 53, ../__compass/sass/_design.sass */
+/* line 54, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_7,
 #design #cont.colltitle ul#back2 li.fake_7 {
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 55, ../__compass/sass/_design.sass */
+/* line 56, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 {
   transform: rotate(-5deg);
   left: -50px;
   z-index: -1;
 }
-/* line 59, ../__compass/sass/_design.sass */
+/* line 60, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg {
   position: relative;
   height: auto;
@@ -340,7 +341,7 @@ header #cont.collnav ul li a {
   margin-right: 12%;
   margin-top: 120px;
 }
-/* line 66, ../__compass/sass/_design.sass */
+/* line 67, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 {
   display: block;
   width: auto;
@@ -357,7 +358,7 @@ header #cont.collnav ul li a {
   padding-left: 20px;
   margin-bottom: 50px;
 }
-/* line 81, ../__compass/sass/_design.sass */
+/* line 82, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 span {
   display: block;
   font-size: 30%;
