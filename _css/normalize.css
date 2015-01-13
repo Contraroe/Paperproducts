@@ -83,7 +83,7 @@ body {
  */
 /* line 99, ../__compass/sass/normalize.sass */
 a:focus {
-  outline: thin dotted;
+  outline: 0;
 }
 
 /**

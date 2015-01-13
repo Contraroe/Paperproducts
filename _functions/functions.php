@@ -109,7 +109,6 @@
 	}
 
 // TECHNICAL INFO
-//
 	function GetTech () {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
