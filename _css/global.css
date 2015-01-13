@@ -244,14 +244,14 @@ header #cont.collnav ul li a {
   overflow: hidden;
   box-shadow: inset 0px -30px 50px black;
 }
-/* line 6, ../__compass/sass/_design.sass */
+/* line 7, ../__compass/sass/_design.sass */
 #design #cont.colltitle {
   position: relative;
   background-color: transparent;
   height: 100%;
   overflow: hidden;
 }
-/* line 12, ../__compass/sass/_design.sass */
+/* line 13, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul {
   position: absolute;
   float: left;
@@ -267,22 +267,22 @@ header #cont.collnav ul li a {
   transform: rotate(10deg);
   box-shadow: -15px 20px 20px rgba(0, 0, 0, 0.8);
 }
-/* line 26, ../__compass/sass/_design.sass */
+/* line 27, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li {
   float: none;
   height: 40px;
   margin-bottom: 20px;
   width: 130px;
 }
-/* line 31, ../__compass/sass/_design.sass */
+/* line 32, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li img {
   width: 100% !important;
 }
-/* line 33, ../__compass/sass/_design.sass */
+/* line 34, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li img:hover {
   opacity: 0.1;
 }
-/* line 35, ../__compass/sass/_design.sass */
+/* line 36, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back,
 #design #cont.colltitle ul#back2 {
   width: auto;
@@ -290,49 +290,49 @@ header #cont.collnav ul li a {
   left: -25px;
   background-color: white;
 }
-/* line 41, ../__compass/sass/_design.sass */
+/* line 42, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li,
 #design #cont.colltitle ul#back2 li {
   margin-right: 5px;
   cursor: default;
 }
-/* line 44, ../__compass/sass/_design.sass */
+/* line 45, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_2,
 #design #cont.colltitle ul#back2 li.fake_2 {
   background-color: rgba(0, 0, 0, 0.1);
 }
-/* line 46, ../__compass/sass/_design.sass */
+/* line 47, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_3,
 #design #cont.colltitle ul#back2 li.fake_3 {
   background-color: rgba(0, 0, 0, 0.2);
 }
-/* line 48, ../__compass/sass/_design.sass */
+/* line 49, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_4,
 #design #cont.colltitle ul#back2 li.fake_4 {
   background-color: rgba(0, 0, 0, 0.3);
 }
-/* line 50, ../__compass/sass/_design.sass */
+/* line 51, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_5,
 #design #cont.colltitle ul#back2 li.fake_5 {
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 52, ../__compass/sass/_design.sass */
+/* line 53, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_6,
 #design #cont.colltitle ul#back2 li.fake_6 {
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 54, ../__compass/sass/_design.sass */
+/* line 55, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_7,
 #design #cont.colltitle ul#back2 li.fake_7 {
   background-color: rgba(0, 0, 0, 0.6);
 }
-/* line 56, ../__compass/sass/_design.sass */
+/* line 57, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 {
   transform: rotate(-5deg);
   left: -50px;
   z-index: -1;
 }
-/* line 60, ../__compass/sass/_design.sass */
+/* line 61, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg {
   position: relative;
   height: 600px;
@@ -342,14 +342,14 @@ header #cont.collnav ul li a {
   margin-top: 120px;
   text-align: center;
 }
-/* line 68, ../__compass/sass/_design.sass */
+/* line 69, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg img {
   height: 100%;
   margin: auto;
   border-radius: 5px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
 }
-/* line 73, ../__compass/sass/_design.sass */
+/* line 74, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 {
   display: block;
   width: auto;
@@ -366,7 +366,7 @@ header #cont.collnav ul li a {
   padding-left: 20px;
   margin-bottom: 50px;
 }
-/* line 88, ../__compass/sass/_design.sass */
+/* line 89, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 span {
   display: block;
   font-size: 30%;
@@ -379,7 +379,7 @@ header #cont.collnav ul li a {
   padding: 5px;
   width: auto;
 }
-/* line 99, ../__compass/sass/_design.sass */
+/* line 100, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav {
   position: absolute;
   width: 40px;
@@ -400,11 +400,11 @@ header #cont.collnav ul li a {
   z-index: 20;
   cursor: pointer;
 }
-/* line 118, ../__compass/sass/_design.sass */
+/* line 119, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav:before {
   content: ">";
 }
-/* line 120, ../__compass/sass/_design.sass */
+/* line 121, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav:hover {
   background-color: rgba(0, 0, 0, 0.5);
   font-weight: 300;
