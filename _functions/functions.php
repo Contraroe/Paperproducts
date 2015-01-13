@@ -12,8 +12,10 @@
 				<li class='home'><a href='index.php'>Home</a></li>
 				<li class='colltoggle'>Collections</li>
 				<li class='contact'><a href='contact.php'>Contact</a></li>
+
 			</ul></div>
-			<div id='cont' class='collnav'><ul>";
+			<div id='border'></div>
+			<div id='cont' class='collnav'><ul id='collnav'>";
 
 
 		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = '1'");
@@ -62,7 +64,24 @@
 		mysqli_close($connect);
 
 		$row = mysqli_fetch_row ($result);
-
+		echo "	<ul id='back'>
+				<li class='fake_7'></li>
+				<li class='fake_6'></li>
+				<li class='fake_5'></li>
+				<li class='fake_4'></li>
+				<li class='fake_3'></li>
+				<li class='fake_2'></li>
+				<li class='fake_1'></li>
+			</ul>
+			<ul id='back2'>
+				<li class='fake_7'></li>
+				<li class='fake_6'></li>
+				<li class='fake_5'></li>
+				<li class='fake_4'></li>
+				<li class='fake_3'></li>
+				<li class='fake_2'></li>
+				<li class='fake_1'></li>
+			</ul>";
 		echo "<ul>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[3]&type_id=$type_id'><img src='_img/color/" . $row[3] . "_C.png'/></a></li>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[5]&type_id=$type_id'><img src='_img/color/" . $row[5] . "_C.png'/></a></li>";
