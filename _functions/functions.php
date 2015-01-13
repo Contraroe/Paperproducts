@@ -36,7 +36,7 @@
 			$i++;
 		};
 
-		echo "</ul></div>";
+		echo "</ul><div></div>";
 	}
 
 	function ActiveColl ($coll_id) {
