@@ -5,7 +5,7 @@
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
 
-
+		$bool=1;
 		echo "<div id='cont' class='mainnav'><ul>
 				<li class='logo'><div id='logo'></div><strong>Lannoo&nbsp;</strong>PaperProducts</li>
 				<li class='home'><a href='index.php'>Home</a></li>
@@ -17,15 +17,18 @@
 			<div id='cont' class='collnav'><ul id='collnav'>";
 
 
-		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = '1'");
+		$result = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = $bool ");
+		if (!$result) {
+			die('Invalid query: ' . mysql_error());
+		};
 		mysqli_close($connect);
 
-		$numa=mysqli_num_rows($query);
+		$numa=mysqli_num_rows($result);
 		$i=0;
 
 		while ($i < $numa) {
-			mysqli_data_seek($query,$i);
-			$row=mysqli_fetch_row($query);
+			mysqli_data_seek($result,$i);
+			$row=mysqli_fetch_row($result);
 			$coll_name=html_entity_decode($row[2]);
 			$coll_id=html_entity_decode($row[1]);
 			$coll_sub_id= $coll_id . "_1";
@@ -150,8 +153,8 @@
 							WHERE finishing.type_id =$type_id");
 		mysqli_close($connect);
 
-		$num =mysqli_num_rows($techtype);
-		$row=mysqli_fetch_row($techtype);
+		$num = mysqli_num_rows($techtype);
+		$row = mysqli_fetch_row($techtype);
 
 		// MM or NOT
 		if ($row[3] == "A4" ) {
