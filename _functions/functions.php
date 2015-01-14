@@ -1,6 +1,4 @@
 <?php
-	
-
 // COLLECTION NAVIGATION
 
 	function AllColl () {
@@ -9,9 +7,10 @@
 
 
 		echo "<div id='cont' class='mainnav'><ul>
+				<li class='logo'><div id='logo'></div><strong>Lannoo&nbsp;</strong>PaperProducts</li>
 				<li class='home'><a href='index.php'>Home</a></li>
 				<li class='colltoggle'>Collections</li>
-				<li class='contact'><a href='contact.php'>Contact</a></li>
+				<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
 
 			</ul></div>
 			<div id='border'></div>
@@ -82,7 +81,7 @@
 				<li class='fake_2'></li>
 				<li class='fake_1'></li>
 			</ul>";
-		echo "<ul>";
+		echo "<ul id='picker'>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[3]&type_id=$type_id'><img src='_img/color/" . $row[3] . "_C.png'/></a></li>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[5]&type_id=$type_id'><img src='_img/color/" . $row[5] . "_C.png'/></a></li>";
 		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[7]&type_id=$type_id'><img src='_img/color/" . $row[7] . "_C.png'/></a></li>";

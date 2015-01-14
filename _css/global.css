@@ -4,18 +4,18 @@ header {
   position: fixed;
   top: 0px;
   width: 100%;
-  background: black;
+  background: #33241c;
   height: 50px;
   z-index: 50;
 }
-/* line 10, ../__compass/sass/_mainnav.sass */
+/* line 9, ../__compass/sass/_mainnav.sass */
 header #border {
   width: 100%;
   height: 5px;
-  background-color: rgba(0, 200, 200, 0.9);
+  background-color: rgba(171, 165, 134, 0.9);
   z-index: 99;
 }
-/* line 15, ../__compass/sass/_mainnav.sass */
+/* line 14, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav,
 header #cont.collnav {
   width: 1224px;
@@ -23,14 +23,14 @@ header #cont.collnav {
   margin: auto;
   overflow: auto;
 }
-/* line 22, ../__compass/sass/_mainnav.sass */
+/* line 20, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul,
 header #cont.collnav ul {
   display: block;
   float: left;
   color: white;
 }
-/* line 26, ../__compass/sass/_mainnav.sass */
+/* line 24, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li,
 header #cont.collnav ul li {
   display: block;
@@ -45,49 +45,91 @@ header #cont.collnav ul li {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 80%;
+  width: auto;
 }
-/* line 39, ../__compass/sass/_mainnav.sass */
+/* line 38, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li:hover,
 header #cont.collnav ul li:hover {
-  background-color: #00c8c8;
+  background-color: #aba586;
 }
-/* line 41, ../__compass/sass/_mainnav.sass */
+/* line 40, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li a,
 header #cont.collnav ul li a {
   color: white;
   display: block;
   height: 100%;
 }
-/* line 45, ../__compass/sass/_mainnav.sass */
+/* line 44, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li.active,
 header #cont.collnav ul li.active {
-  background-color: #00c8c8;
+  background-color: #aba586;
 }
-/* line 47, ../__compass/sass/_mainnav.sass */
+/* line 46, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li.logo,
+header #cont.collnav ul li.logo {
+  cursor: default;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+}
+/* line 51, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li.logo:hover,
+header #cont.collnav ul li.logo:hover {
+  background-color: #33241c;
+}
+/* line 53, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li strong,
+header #cont.collnav ul li strong {
+  font-size: 140%;
+  font-style: normal;
+  color: #aba586;
+}
+/* line 57, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li #logo,
+header #cont.collnav ul li #logo {
+  background-image: url("../_img/logo/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 60%;
+  -moz-background-size: 60%;
+  -o-background-size: 60%;
+  background-size: 60%;
+  width: 50px;
+  height: 100%;
+  float: left;
+}
+/* line 62, ../__compass/sass/_mainnav.sass */
 header #cont.collnav {
   display: none;
   margin-top: -5px;
   z-index: 9;
 }
-/* line 51, ../__compass/sass/_mainnav.sass */
+/* line 66, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul {
-  width: 100%;
+  width: 46%;
 }
-/* line 53, ../__compass/sass/_mainnav.sass */
+/* line 68, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li {
-  width: 20%;
+  width: 33%;
+  height: 50px;
+  line-height: 50px;
+  font-style: italic;
   padding: 0px;
-  background-color: #00c8c8;
-  border-top: 5px solid #00c8c8;
+  background-color: rgba(171, 165, 134, 0.2);
+  border-top: 5px solid #aba586;
 }
-/* line 58, ../__compass/sass/_mainnav.sass */
+/* line 76, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li:hover {
-  background-color: black;
-  border-top: 5px solid #00c8c8;
+  background-color: rgba(51, 36, 28, 0.7);
 }
-/* line 61, ../__compass/sass/_mainnav.sass */
+/* line 78, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li a {
   margin-left: 20px;
+  color: rgba(51, 36, 28, 0.7);
+}
+/* line 81, ../__compass/sass/_mainnav.sass */
+header #cont.collnav ul li a:hover {
+  color: white;
 }
 
 /* line 14, ../__compass/sass/global.sass */
@@ -95,31 +137,32 @@ html, body {
   border: 0;
   margin: 0;
   height: 100%;
-  min-width: 100%;
+  width: 100%;
   -webkit-font-smoothing: antialiased;
   font-smooth: always;
   color: black;
   padding: 0;
+  overflow: hidden;
 }
-/* line 23, ../__compass/sass/global.sass */
+/* line 24, ../__compass/sass/global.sass */
 html ul, body ul {
   list-style-type: none;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 28, ../__compass/sass/global.sass */
+/* line 29, ../__compass/sass/global.sass */
 html a, body a {
   text-decoration: none;
   color: black;
 }
 
-/* line 32, ../__compass/sass/global.sass */
+/* line 33, ../__compass/sass/global.sass */
 section {
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 35, ../__compass/sass/global.sass */
+/* line 36, ../__compass/sass/global.sass */
 section #cont {
   width: 1224px;
   background: rgba(0, 200, 200, 0.1);
@@ -129,12 +172,12 @@ section #cont {
   margin-bottom: 5px;
   z-index: 0;
 }
-/* line 43, ../__compass/sass/global.sass */
+/* line 44, ../__compass/sass/global.sass */
 section #cont ul {
   display: block;
   float: left;
 }
-/* line 46, ../__compass/sass/global.sass */
+/* line 47, ../__compass/sass/global.sass */
 section #cont ul li {
   display: block;
   height: 50px;
@@ -149,18 +192,18 @@ header {
   position: fixed;
   top: 0px;
   width: 100%;
-  background: black;
+  background: #33241c;
   height: 50px;
   z-index: 50;
 }
-/* line 10, ../__compass/sass/_mainnav.sass */
+/* line 9, ../__compass/sass/_mainnav.sass */
 header #border {
   width: 100%;
   height: 5px;
-  background-color: rgba(0, 200, 200, 0.9);
+  background-color: rgba(171, 165, 134, 0.9);
   z-index: 99;
 }
-/* line 15, ../__compass/sass/_mainnav.sass */
+/* line 14, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav,
 header #cont.collnav {
   width: 1224px;
@@ -168,14 +211,14 @@ header #cont.collnav {
   margin: auto;
   overflow: auto;
 }
-/* line 22, ../__compass/sass/_mainnav.sass */
+/* line 20, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul,
 header #cont.collnav ul {
   display: block;
   float: left;
   color: white;
 }
-/* line 26, ../__compass/sass/_mainnav.sass */
+/* line 24, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li,
 header #cont.collnav ul li {
   display: block;
@@ -190,49 +233,188 @@ header #cont.collnav ul li {
   font-weight: 400;
   text-transform: uppercase;
   font-size: 80%;
+  width: auto;
 }
-/* line 39, ../__compass/sass/_mainnav.sass */
+/* line 38, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li:hover,
 header #cont.collnav ul li:hover {
-  background-color: #00c8c8;
+  background-color: #aba586;
 }
-/* line 41, ../__compass/sass/_mainnav.sass */
+/* line 40, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li a,
 header #cont.collnav ul li a {
   color: white;
   display: block;
   height: 100%;
 }
-/* line 45, ../__compass/sass/_mainnav.sass */
+/* line 44, ../__compass/sass/_mainnav.sass */
 header #cont.mainnav ul li.active,
 header #cont.collnav ul li.active {
-  background-color: #00c8c8;
+  background-color: #aba586;
 }
-/* line 47, ../__compass/sass/_mainnav.sass */
+/* line 46, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li.logo,
+header #cont.collnav ul li.logo {
+  cursor: default;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 20px;
+}
+/* line 51, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li.logo:hover,
+header #cont.collnav ul li.logo:hover {
+  background-color: #33241c;
+}
+/* line 53, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li strong,
+header #cont.collnav ul li strong {
+  font-size: 140%;
+  font-style: normal;
+  color: #aba586;
+}
+/* line 57, ../__compass/sass/_mainnav.sass */
+header #cont.mainnav ul li #logo,
+header #cont.collnav ul li #logo {
+  background-image: url("../_img/logo/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 60%;
+  -moz-background-size: 60%;
+  -o-background-size: 60%;
+  background-size: 60%;
+  width: 50px;
+  height: 100%;
+  float: left;
+}
+/* line 62, ../__compass/sass/_mainnav.sass */
 header #cont.collnav {
   display: none;
   margin-top: -5px;
   z-index: 9;
 }
-/* line 51, ../__compass/sass/_mainnav.sass */
+/* line 66, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul {
-  width: 100%;
+  width: 46%;
 }
-/* line 53, ../__compass/sass/_mainnav.sass */
+/* line 68, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li {
-  width: 20%;
+  width: 33%;
+  height: 50px;
+  line-height: 50px;
+  font-style: italic;
   padding: 0px;
-  background-color: #00c8c8;
-  border-top: 5px solid #00c8c8;
+  background-color: rgba(171, 165, 134, 0.2);
+  border-top: 5px solid #aba586;
 }
-/* line 58, ../__compass/sass/_mainnav.sass */
+/* line 76, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li:hover {
-  background-color: black;
-  border-top: 5px solid #00c8c8;
+  background-color: rgba(51, 36, 28, 0.7);
 }
-/* line 61, ../__compass/sass/_mainnav.sass */
+/* line 78, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li a {
   margin-left: 20px;
+  color: rgba(51, 36, 28, 0.7);
+}
+/* line 81, ../__compass/sass/_mainnav.sass */
+header #cont.collnav ul li a:hover {
+  color: white;
+}
+
+/* line 1, ../__compass/sass/_intro.sass */
+#intro {
+  background-image: url("../_img/bg_1.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+  box-shadow: inset 0px -30px 50px black;
+}
+/* line 6, ../__compass/sass/_intro.sass */
+#intro #cont {
+  width: 1224px;
+  height: 100vh;
+  margin: auto;
+  overflow: auto;
+  background-color: transparent;
+}
+/* line 12, ../__compass/sass/_intro.sass */
+#intro #cont #arrows,
+#intro #cont #logo,
+#intro #cont #test {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  margin-left: -75px;
+  margin-top: 30px;
+  border: 0px solid transparent;
+}
+/* line 21, ../__compass/sass/_intro.sass */
+#intro #cont #logo {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  margin-left: -60px;
+  margin-top: -50px;
+  background-image: url("../_img/logo/logo_b.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 80%;
+  -moz-background-size: 80%;
+  -o-background-size: 80%;
+  background-size: 80%;
+}
+/* line 28, ../__compass/sass/_intro.sass */
+#intro #cont #arrows {
+  width: 150px;
+  height: 60px;
+  left: 50%;
+  margin-left: -75px;
+  margin-top: 30px;
+  background-image: url("../_img/logo/arrows.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 70%;
+  -moz-background-size: 70%;
+  -o-background-size: 70%;
+  background-size: 70%;
+}
+/* line 35, ../__compass/sass/_intro.sass */
+#intro #cont h1#intro_title {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 800%;
+  font-family: "Roboto", serif;
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  top: 20%;
+  margin-top: 0px;
+  line-height: 100px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  display: none;
+}
+/* line 52, ../__compass/sass/_intro.sass */
+#intro #cont h1#intro_title span {
+  display: block;
+  font-size: 70%;
+  margin-top: 60px;
+  padding: 5px;
+  width: auto;
+  font-weight: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+/* line 60, ../__compass/sass/_intro.sass */
+#intro #cont h1#intro_title.it_color {
+  margin-top: 100px;
+  color: #33241c;
 }
 
 /* line 1, ../__compass/sass/_design.sass */
@@ -244,22 +426,22 @@ header #cont.collnav ul li a {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 900px;
+  height: 100vh;
   overflow: hidden;
   box-shadow: inset 0px -30px 50px black;
 }
-/* line 7, ../__compass/sass/_design.sass */
+/* line 6, ../__compass/sass/_design.sass */
 #design #cont.colltitle {
   position: relative;
   background-color: transparent;
   height: 100%;
   overflow: hidden;
 }
-/* line 13, ../__compass/sass/_design.sass */
+/* line 12, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul {
   position: absolute;
   float: left;
-  bottom: -40px;
+  bottom: -300px;
   margin-left: 140px;
   height: 460px;
   width: auto;
@@ -271,28 +453,28 @@ header #cont.collnav ul li a {
   transform: rotate(10deg);
   box-shadow: -15px 20px 20px rgba(0, 0, 0, 0.8);
 }
-/* line 27, ../__compass/sass/_design.sass */
+/* line 26, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li {
   float: none;
   height: 40px;
   margin-bottom: 20px;
   width: 130px;
 }
-/* line 32, ../__compass/sass/_design.sass */
+/* line 31, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li a {
   width: auto;
   height: auto;
   border: none;
 }
-/* line 36, ../__compass/sass/_design.sass */
+/* line 35, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li a img {
   width: 100% !important;
 }
-/* line 38, ../__compass/sass/_design.sass */
+/* line 37, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li a img:hover {
   opacity: 0.2;
 }
-/* line 40, ../__compass/sass/_design.sass */
+/* line 39, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back,
 #design #cont.colltitle ul#back2 {
   width: auto;
@@ -300,66 +482,97 @@ header #cont.collnav ul li a {
   left: -25px;
   background-color: white;
 }
-/* line 46, ../__compass/sass/_design.sass */
+/* line 45, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li,
 #design #cont.colltitle ul#back2 li {
   margin-right: 5px;
   cursor: default;
 }
-/* line 49, ../__compass/sass/_design.sass */
+/* line 48, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_2,
 #design #cont.colltitle ul#back2 li.fake_2 {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(51, 36, 28, 0.1);
 }
-/* line 51, ../__compass/sass/_design.sass */
+/* line 50, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_3,
 #design #cont.colltitle ul#back2 li.fake_3 {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(51, 36, 28, 0.2);
 }
-/* line 53, ../__compass/sass/_design.sass */
+/* line 52, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_4,
 #design #cont.colltitle ul#back2 li.fake_4 {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(51, 36, 28, 0.3);
 }
-/* line 55, ../__compass/sass/_design.sass */
+/* line 54, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_5,
 #design #cont.colltitle ul#back2 li.fake_5 {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(51, 36, 28, 0.4);
 }
-/* line 57, ../__compass/sass/_design.sass */
+/* line 56, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_6,
 #design #cont.colltitle ul#back2 li.fake_6 {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(51, 36, 28, 0.5);
 }
-/* line 59, ../__compass/sass/_design.sass */
+/* line 58, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_7,
 #design #cont.colltitle ul#back2 li.fake_7 {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(51, 36, 28, 0.6);
 }
-/* line 61, ../__compass/sass/_design.sass */
+/* line 60, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 {
   transform: rotate(-5deg);
   left: -50px;
   z-index: -1;
 }
-/* line 65, ../__compass/sass/_design.sass */
+/* line 64, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li {
+  margin-right: 5px;
+  cursor: default;
+}
+/* line 67, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li.fake_2 {
+  background-color: rgba(171, 165, 134, 0.1);
+}
+/* line 69, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li.fake_3 {
+  background-color: rgba(171, 165, 134, 0.2);
+}
+/* line 71, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li.fake_4 {
+  background-color: rgba(171, 165, 134, 0.3);
+}
+/* line 73, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li.fake_5 {
+  background-color: rgba(171, 165, 134, 0.4);
+}
+/* line 75, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li.fake_6 {
+  background-color: rgba(171, 165, 134, 0.5);
+}
+/* line 77, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul#back2 li.fake_7 {
+  background-color: rgba(171, 165, 134, 0.6);
+}
+/* line 79, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg {
   position: relative;
   height: 600px;
   float: right;
   width: 50%;
   margin-right: 5%;
-  margin-top: 120px;
+  top: 50%;
+  margin-top: -300px;
   text-align: center;
+  display: none;
 }
-/* line 73, ../__compass/sass/_design.sass */
+/* line 89, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg img {
   height: 100%;
   margin: auto;
   border-radius: 5px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
 }
-/* line 78, ../__compass/sass/_design.sass */
+/* line 94, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 {
   display: block;
   width: auto;
@@ -375,22 +588,24 @@ header #cont.collnav ul li a {
   font-weight: 100;
   padding-left: 20px;
   margin-bottom: 50px;
+  display: none;
 }
-/* line 93, ../__compass/sass/_design.sass */
+/* line 110, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 span {
   display: block;
   font-size: 30%;
   font-weight: 100;
-  color: white;
-  margin-top: 40px;
+  color: #33241c;
+  margin-top: 60px;
   top: -100px;
   text-transform: uppercase;
   font-style: italic;
   padding: 5px;
   width: auto;
 }
-/* line 104, ../__compass/sass/_design.sass */
+/* line 121, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav {
+  display: none;
   position: absolute;
   width: 40px;
   height: 40px;
@@ -410,11 +625,11 @@ header #cont.collnav ul li a {
   z-index: 20;
   cursor: pointer;
 }
-/* line 123, ../__compass/sass/_design.sass */
+/* line 141, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav:before {
   content: ">";
 }
-/* line 125, ../__compass/sass/_design.sass */
+/* line 143, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav:hover {
   background-color: rgba(0, 0, 0, 0.5);
   font-weight: 300;

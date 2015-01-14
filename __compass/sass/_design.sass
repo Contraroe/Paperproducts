@@ -1,7 +1,6 @@
 #design
 	@include cover-img("../_img/bg_1.jpg", bottom center , repeat, cover)
-	height: 900px
-	
+	height: 100vh //TIJDELIJKE VERSIE / NORMAL 900px
 	overflow: hidden
 	box-shadow: inset 0px -30px 50px $zwart_10
 	#cont.colltitle
@@ -13,7 +12,7 @@
 		ul
 			position: absolute
 			float: left
-			bottom: -40px
+			bottom: -300px
 			margin-left: 140px
 			height: 460px
 			width: auto
@@ -47,29 +46,46 @@
 				margin-right: 5px
 				cursor: default
 				&.fake_2
-					background-color: $zwart_1
+					background-color: $bruin_1
 				&.fake_3
-					background-color: $zwart_2
+					background-color: $bruin_2
 				&.fake_4
-					background-color: $zwart_3
+					background-color: $bruin_3
 				&.fake_5
-					background-color: $zwart_4
+					background-color: $bruin_4
 				&.fake_6
-					background-color: $zwart_5
+					background-color: $bruin_5
 				&.fake_7
-					background-color: $zwart_6
+					background-color: $bruin_6
 		ul#back2
 			transform:  rotate(-5deg)
 			left: -50px
 			z-index: -1
+			li
+				margin-right: 5px
+				cursor: default
+				&.fake_2
+					background-color: $grey_1
+				&.fake_3
+					background-color: $grey_2
+				&.fake_4
+					background-color: $grey_3
+				&.fake_5
+					background-color: $grey_4
+				&.fake_6
+					background-color: $grey_5
+				&.fake_7
+					background-color: $grey_6
 		#coverimg
 			position: relative
 			height: 600px
 			float: right
 			width: 50%
 			margin-right: 5%
-			margin-top: 120px
+			top: 50%  //TIJDELIJKE VERSIE / NORMAL 120px
+			margin-top: -300px
 			text-align: center
+			display: none
 			img
 				height: 100%
 				margin: auto
@@ -90,18 +106,20 @@
 			font-weight: 100
 			padding-left: 20px
 			margin-bottom: 50px
+			display: none
 			span
 				display: block
 				font-size: 30%
 				font-weight: 100
-				color: $wit_10
-				margin-top: 40px
+				color: $bruin_10
+				margin-top: 60px //TIJDELIJKE VERSIE / NORMAL 40px
 				top: -100px
 				text-transform: uppercase
 				font-style: italic
 				padding: 5px
 				width: auto
 		#scrollnav
+			display: none  //TIJDELIJKE VERSIE
 			position: absolute
 			width: 40px
 			height: 40px
