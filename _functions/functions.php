@@ -6,21 +6,20 @@
 		include "_php/db_connect.php";
 
 		$bool=1;
-		echo "<div id='cont' class='mainnav'><ul>
-				<li class='logo'><div id='logo'></div><strong>Lannoo&nbsp;</strong>PaperProducts</li>
-				<li class='home'><a href='index.php'>Home</a></li>
-				<li class='colltoggle'>Collections</li>
-				<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
-
-			</ul></div>
+		echo "	<div id='cont' class='mainnav'>
+				<ul>
+					<li class='logo'><div id='logo'></div><strong>Lannoo&nbsp;</strong>PaperProducts</li>
+					<li class='home'><a href='index.php'>Home</a></li>
+					<li class='colltoggle'>Collections</li>
+					<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
+				</ul>
+			</div>
 			<div id='border'></div>
-			<div id='cont' class='collnav'><ul id='collnav'>";
+			<div id='cont' class='collnav'><ul id='collnav'>
+			";
 
+		$result = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1");
 
-		$result = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = $bool ");
-		if (!$result) {
-			die('Invalid query: ' . mysql_error());
-		};
 		mysqli_close($connect);
 
 		$numa=mysqli_num_rows($result);
@@ -147,7 +146,7 @@
 
 		include "_functions/variables.php";
 
-		$techtype = mysqli_query($connect, " SELECT * 
+		$techtype = mysqli_query($connect, " SELECT *
 							FROM finishing
 							INNER JOIN cover ON finishing.type_id = cover.type_id
 							WHERE finishing.type_id =$type_id");
@@ -167,9 +166,9 @@
 
 		// PLASTIFICATION DETERMINER
 		$plast = 1;
-		if ($type_id == 4 | $type_id == 5){ 
+		if ($type_id == 4 | $type_id == 5){
 			$plast = 0;
-		} else { 
+		} else {
 			$plast =1;
 		}
 
@@ -205,7 +204,7 @@
 
 		include "_functions/variables.php";
 
-		$techtype = mysqli_query($connect, " SELECT * 
+		$techtype = mysqli_query($connect, " SELECT *
 							FROM inside
 							WHERE type_id =$type_id");
 		mysqli_close($connect);
