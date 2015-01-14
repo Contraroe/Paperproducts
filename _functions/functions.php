@@ -84,15 +84,15 @@
 				<li class='fake_1'></li>
 			</ul>";
 		echo "<ul id='picker'>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[3]&type_id=$type_id'><img src='_img/color/" . $row[3] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[5]&type_id=$type_id'><img src='_img/color/" . $row[5] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[7]&type_id=$type_id'><img src='_img/color/" . $row[7] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[9]&type_id=$type_id'><img src='_img/color/" . $row[9] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[11]&type_id=$type_id'><img src='_img/color/" . $row[11] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[13]&type_id=$type_id'><img src='_img/color/" . $row[13] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[15]&type_id=$type_id'><img src='_img/color/" . $row[15] . "_C.png'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[3]&type_id=$type_id'><img src='_img/color/" . $row[3] . "_C.jpg'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[5]&type_id=$type_id'><img src='_img/color/" . $row[5] . "_C.jpg'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[7]&type_id=$type_id'><img src='_img/color/" . $row[7] . "_C.jpg'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[9]&type_id=$type_id'><img src='_img/color/" . $row[9] . "_C.jpg'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[11]&type_id=$type_id'><img src='_img/color/" . $row[11] . "_C.jpg'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[13]&type_id=$type_id'><img src='_img/color/" . $row[13] . "_C.jpg'/></a></li>";
+		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[15]&type_id=$type_id'><img src='_img/color/" . $row[15] . "_C.jpg'/></a></li>";
 		echo "</ul>";
-		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".png'/></div>";
+		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
 	}
 
 
