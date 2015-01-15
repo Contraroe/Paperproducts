@@ -464,7 +464,7 @@ header #cont.collnav ul li a:hover {
   display: block;
   background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
-  width: 100px;
+  width: 130px;
 }
 /* line 85, ../__compass/sass/_social.sass */
 #social_cont ul #diaries:hover {

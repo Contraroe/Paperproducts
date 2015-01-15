@@ -30,8 +30,8 @@ $twitter = json_decode(file_get_contents('https://cdn.syndication.twimg.com/widg
 			<?php // echo $linked; ?>
 		</li> -->
 		<li class="lannoo"></li>
-		<li id="diaries" class="lannoo2 count"><a id="social" href="http://www.lannoo-print.be" terget="_blank">Lannooprint</a></li>
-		<li id="digi" class="lannoo2 count"><a id="social" href="http://www.lannoocom.be" terget="_blank">Digital printing</a></li>
+		<li id="diaries" class="lannoo2 count"><a id="social" href="http://www.lannoo-print.be">Lannoo printers</a></li>
+		<li id="digi" class="lannoo2 count"><a id="social" href="http://www.lannoocom.be" target="_blank">Digital printing</a></li>
 		<li id="subscribe" class="lannoo2 count news" >Subscribe</li>
 	</ul>
 </div>
