@@ -37,4 +37,8 @@ $(document).ready(function() {
 		$('#coverimg').fadeOut( "slow", function() {});
 
 	});
+	$('#picker').click(function() {
+		$('#coverimg').fadeOut( "slow", function() {});
+
+	});
 });

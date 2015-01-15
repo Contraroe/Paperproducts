@@ -31,3 +31,4 @@
 <body>
 <?php include "_php/error.php" ?>
 <?php include "_functions/functions.php" ?>
+<?php include "_includes/socialinfo.php" ?>

@@ -132,7 +132,7 @@ header #cont.collnav ul li a:hover {
   color: white;
 }
 
-/* line 14, ../__compass/sass/global.sass */
+/* line 15, ../__compass/sass/global.sass */
 html, body {
   border: 0;
   margin: 0;
@@ -144,25 +144,25 @@ html, body {
   padding: 0;
   overflow: hidden;
 }
-/* line 24, ../__compass/sass/global.sass */
+/* line 25, ../__compass/sass/global.sass */
 html ul, body ul {
   list-style-type: none;
   width: 100%;
   margin: 0px;
   padding: 0px;
 }
-/* line 29, ../__compass/sass/global.sass */
+/* line 30, ../__compass/sass/global.sass */
 html a, body a {
   text-decoration: none;
   color: black;
 }
 
-/* line 33, ../__compass/sass/global.sass */
+/* line 34, ../__compass/sass/global.sass */
 section {
   width: 100%;
   background: rgba(0, 0, 0, 0.1);
 }
-/* line 36, ../__compass/sass/global.sass */
+/* line 37, ../__compass/sass/global.sass */
 section #cont {
   width: 1224px;
   background: rgba(0, 200, 200, 0.1);
@@ -172,12 +172,12 @@ section #cont {
   margin-bottom: 5px;
   z-index: 0;
 }
-/* line 44, ../__compass/sass/global.sass */
+/* line 45, ../__compass/sass/global.sass */
 section #cont ul {
   display: block;
   float: left;
 }
-/* line 47, ../__compass/sass/global.sass */
+/* line 48, ../__compass/sass/global.sass */
 section #cont ul li {
   display: block;
   height: 50px;
@@ -318,6 +318,273 @@ header #cont.collnav ul li a {
 /* line 81, ../__compass/sass/_mainnav.sass */
 header #cont.collnav ul li a:hover {
   color: white;
+}
+
+/* line 1, ../__compass/sass/_social.sass */
+#social_cont {
+  position: absolute;
+  width: 40px;
+  z-index: 99;
+  color: white;
+  top: 50%;
+  margin-top: -150px;
+  display: block;
+  z-index: 10;
+  left: 40px;
+  color: white;
+  font-family: "Roboto", serif;
+}
+@media screen and (max-width: 500px) {
+  /* line 1, ../__compass/sass/_social.sass */
+  #social_cont {
+    visibility: hidden;
+  }
+}
+/* line 15, ../__compass/sass/_social.sass */
+#social_cont ul {
+  list-style-type: none;
+}
+/* line 17, ../__compass/sass/_social.sass */
+#social_cont ul li {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 40px;
+  width: 40px;
+  margin-left: -40px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+/* line 28, ../__compass/sass/_social.sass */
+#social_cont ul li:hover {
+  background-color: #00c8c8;
+}
+/* line 30, ../__compass/sass/_social.sass */
+#social_cont ul li a {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+/* line 35, ../__compass/sass/_social.sass */
+#social_cont ul .twitter {
+  background-image: url("../_img/logo/twitter.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 80%;
+  -moz-background-size: 80%;
+  -o-background-size: 80%;
+  background-size: 80%;
+  background-color: #469ae9;
+}
+/* line 38, ../__compass/sass/_social.sass */
+#social_cont ul .facebook {
+  background-color: #0253a2;
+  background-image: url("../_img/logo/facebook.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 80%;
+  -moz-background-size: 80%;
+  -o-background-size: 80%;
+  background-size: 80%;
+}
+/* line 41, ../__compass/sass/_social.sass */
+#social_cont ul .linked {
+  background-color: #0f8eaf;
+  background-image: url("../_img/logo/linked.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 80%;
+  -moz-background-size: 80%;
+  -o-background-size: 80%;
+  background-size: 80%;
+}
+/* line 44, ../__compass/sass/_social.sass */
+#social_cont ul li.twitter2 {
+  background-color: #64b8ff;
+}
+/* line 46, ../__compass/sass/_social.sass */
+#social_cont ul li.facebook2 {
+  background-color: #2071c0;
+}
+/* line 48, ../__compass/sass/_social.sass */
+#social_cont ul li.linked2 {
+  background-color: #2daccd;
+}
+/* line 50, ../__compass/sass/_social.sass */
+#social_cont ul .count {
+  padding: 5px 0px 5px 0px;
+  height: auto;
+  background-color: #64b8ff;
+  text-align: center;
+  font-size: 90%;
+  margin-bottom: 5px;
+  cursor: auto;
+}
+/* line 58, ../__compass/sass/_social.sass */
+#social_cont ul .lannoo {
+  background-image: url("../_img/logo/logo.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 70%;
+  -moz-background-size: 70%;
+  -o-background-size: 70%;
+  background-size: 70%;
+  margin-top: 20px;
+  background-color: #00c8c8;
+  cursor: auto;
+}
+/* line 63, ../__compass/sass/_social.sass */
+#social_cont ul .lannoo:hover {
+  background-color: #00c8c8;
+}
+/* line 65, ../__compass/sass/_social.sass */
+#social_cont ul #digi, #social_cont ul #diaries, #social_cont ul #subscribe, #social_cont ul #goto {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0px;
+  width: 120px;
+  font-size: 100%;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 5px;
+  color: white;
+}
+/* line 74, ../__compass/sass/_social.sass */
+#social_cont ul #digi:hover, #social_cont ul #diaries:hover, #social_cont ul #subscribe:hover, #social_cont ul #goto:hover {
+  background-color: #00c8c8;
+}
+/* line 76, ../__compass/sass/_social.sass */
+#social_cont ul #digi a, #social_cont ul #diaries a, #social_cont ul #subscribe a, #social_cont ul #goto a {
+  color: white;
+}
+/* line 78, ../__compass/sass/_social.sass */
+#social_cont ul #diaries {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  width: 100px;
+}
+/* line 85, ../__compass/sass/_social.sass */
+#social_cont ul #diaries:hover {
+  background-color: #00c8c8;
+}
+/* line 87, ../__compass/sass/_social.sass */
+#social_cont ul #subscribe {
+  width: 95px;
+  margin-bottom: 0px;
+}
+/* line 91, ../__compass/sass/_social.sass */
+#social_cont ul #goto {
+  width: 50px;
+}
+
+/* line 95, ../__compass/sass/_social.sass */
+#subscribeform {
+  z-index: 9;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+/* line 101, ../__compass/sass/_social.sass */
+#subscribeform form {
+  position: relative;
+  width: 210px;
+  height: auto;
+  background-color: white;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  margin-left: -125px;
+  margin-top: -200px;
+  padding: 20px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+/* line 113, ../__compass/sass/_social.sass */
+#subscribeform form h1 {
+  font-size: 180%;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.6);
+}
+/* line 117, ../__compass/sass/_social.sass */
+#subscribeform form h1 span {
+  color: #00c8c8;
+}
+/* line 119, ../__compass/sass/_social.sass */
+#subscribeform form label {
+  display: block;
+  position: relative;
+  color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 20px;
+  text-align: left;
+  margin-top: 10px;
+}
+/* line 127, ../__compass/sass/_social.sass */
+#subscribeform form input, #subscribeform form select {
+  width: 100%;
+  border: none;
+  height: 25px;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 96%;
+  font-style: italic;
+  text-align: left;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: -2%;
+}
+/* line 141, ../__compass/sass/_social.sass */
+#subscribeform form select {
+  margin-bottom: 20px;
+  margin-top: 1px;
+  height: 30px;
+  font-weight: 400;
+  font-size: 90%;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+  width: 104%;
+}
+/* line 150, ../__compass/sass/_social.sass */
+#subscribeform form input[type="submit"] {
+  background-color: #00c8c8;
+  color: white;
+  height: 30px;
+  box-shadow: 1px 1px 3px black;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  width: 104%;
+}
+/* line 159, ../__compass/sass/_social.sass */
+#subscribeform form input[type="submit"]:hover {
+  box-shadow: inset 1px 1px 3px black;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* line 162, ../__compass/sass/_social.sass */
+#subscribeform form #close {
+  position: absolute;
+  background-color: #00c8c8;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  color: white;
+  vertical-align: middle;
+  top: -15px;
+  right: -15px;
+  line-height: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 800;
+}
+/* line 176, ../__compass/sass/_social.sass */
+#subscribeform form #close:hover {
+  color: #00c8c8;
+  background-color: black;
 }
 
 /* line 1, ../__compass/sass/_intro.sass */
