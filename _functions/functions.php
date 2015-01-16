@@ -1,5 +1,5 @@
 <?php
-	
+
 
 // COLLECTION NAVIGATION
 
@@ -11,7 +11,7 @@
 		echo "<div id='cont' class='mainnav'><ul>
 				<li class='home'><a href='index.php'>Home</a></li>
 				<li class='colltoggle'>Collections</li>
-				<li class='contact'><a href='contact.php'>Contact</a></li>
+				<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
 
 			</ul></div>
 			<div id='border'></div>
@@ -64,34 +64,37 @@
 		mysqli_close($connect);
 
 		$row = mysqli_fetch_row ($result);
-		echo "	<ul id='back'>
-				<li class='fake_7'></li>
-				<li class='fake_6'></li>
-				<li class='fake_5'></li>
-				<li class='fake_4'></li>
-				<li class='fake_3'></li>
-				<li class='fake_2'></li>
-				<li class='fake_1'></li>
-			</ul>
-			<ul id='back2'>
-				<li class='fake_7'></li>
-				<li class='fake_6'></li>
-				<li class='fake_5'></li>
-				<li class='fake_4'></li>
-				<li class='fake_3'></li>
-				<li class='fake_2'></li>
-				<li class='fake_1'></li>
-			</ul>";
-		echo "<ul>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[3]&type_id=$type_id'><img src='_img/color/" . $row[3] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[5]&type_id=$type_id'><img src='_img/color/" . $row[5] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[7]&type_id=$type_id'><img src='_img/color/" . $row[7] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[9]&type_id=$type_id'><img src='_img/color/" . $row[9] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[11]&type_id=$type_id'><img src='_img/color/" . $row[11] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[13]&type_id=$type_id'><img src='_img/color/" . $row[13] . "_C.png'/></a></li>";
-		echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[15]&type_id=$type_id'><img src='_img/color/" . $row[15] . "_C.png'/></a></li>";
+
+		echo "	<ul id='back'>";
+		$a = 7;
+		while ( $a > 0) {
+			echo "<li class='fake_$a'></li>";
+			$a = $a - 1;
+		}
 		echo "</ul>";
-		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".png'/></div>";
+
+
+		echo "	<ul id='back2'>";
+		$b = 7;
+		while ( $b > 0) {
+			echo "<li class='fake_$b'></li>";
+			$b = $b - 1;
+		}
+		echo "</ul>";
+
+
+		echo "<ul id='picker'>";
+
+		$j=3;
+		while ( $j < 16 ) {
+			if ( $row[$j] == NULL ) {}else{
+			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
+			}
+			$j = $j + 2;
+		}
+
+		echo "</ul>";
+		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
 	}
 
 
@@ -124,13 +127,25 @@
 
 		$i=0;
 
+		$active = "active";
+
+		$test = $type_id;
+
+
 		while ($i < $num) {
 			mysqli_data_seek($techtype,$i);
 			$row=mysqli_fetch_row($techtype);
 			$type_name=html_entity_decode($row[0]);
 			$type_id=html_entity_decode($row[1]);
 
-			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id'>" . $type_name . "</a></li>";
+
+			if ($test === $row[1]) {
+				$active = "active";
+			} else {
+				$active = "no";
+			};
+
+			echo "<li><a  class='". $active ."' href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id#techinfo'>" . $type_name . "</a></li>";
 
 			$i++;
 
@@ -145,7 +160,7 @@
 
 		include "_functions/variables.php";
 
-		$techtype = mysqli_query($connect, " SELECT * 
+		$techtype = mysqli_query($connect, " SELECT *
 							FROM finishing
 							INNER JOIN cover ON finishing.type_id = cover.type_id
 							WHERE finishing.type_id =$type_id");
@@ -165,36 +180,44 @@
 
 		// PLASTIFICATION DETERMINER
 		$plast = 1;
-		if ($type_id == 4 | $type_id == 5){ 
+		if ($type_id == 4 | $type_id == 5){
 			$plast = 0;
-		} else { 
+		} else {
 			$plast =1;
 		}
+		echo "<div id='outcont'>";
+		echo "<div id='techcont'>";
+			echo "<h2>Size</h2>" ;
+			echo "<div id='tech' class='active_1'>" . html_entity_decode($row[3]) . "</div>";
+		echo "</div>";
+		echo "<div id='techcont'>";
+			echo "<h2>Binding</h2>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Glued</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'>Wire-O</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Sown</div>";
+		echo "</div>";
+		echo "<div id='techcont'>";
+			echo "<h2>Corner</h2>" ;
+			echo "<div id='tech' class='active_1'>Straight corners</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Rounded corners</div>";
+		echo "</div>";
+		echo "<div id='techcont'>";
+			echo "<h2>Cover</h2>" ;
+			echo "<div id='tech' class='active_" . html_entity_decode($row[11]) . "'>Flap left</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[12]) . "'>Double</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[13]) . "'>Softcover</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[14]) . "'>Hardcover</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[15]) . "'>Leather</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[16]) . "'>Cardboard</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[17]) . "'>Linnen Softcover</div>";
+		echo "</div>";
 
-
-		echo "<h2>Size</h2>" ;
-		echo "<div id='tech' class='active_1'>" . html_entity_decode($row[3]) . $test . "</div>";
-
-		echo "<br><h2>Binding options</h2>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Glued</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'>Wire-O</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Sown</div>";
-
-		echo "<br><h2>Corner options</h2>" ;
-		echo "<div id='tech' class='active_1'>Straight corners</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Rounded corners</div>";
-
-		echo "<br><h2>Cover options</h2>" ;
-		echo "<div id='tech' class='active_" . html_entity_decode($row[11]) . "'>Flap left</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[12]) . "'>Double</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[13]) . "'>Softcover</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[14]) . "'>Hardcover</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[15]) . "'>Leather</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[16]) . "'>Cardboard</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[17]) . "'>Linnen Softcover</div>";
-
-		echo "<br><h2>Cover extra finishing</h2>" ;
+		if ($plast == 1) {
+			echo "<div id='techcont'>";
+		echo "<h2>Cover extra finishing</h2>" ;
 		echo "<div id='tech' class='active_" . $plast . "'>Softtouch plastification</div>";
+		echo "</div>";
+		} else {};
 	}
 
 	function TechDetTwo ($type_id) {
@@ -203,7 +226,7 @@
 
 		include "_functions/variables.php";
 
-		$techtype = mysqli_query($connect, " SELECT * 
+		$techtype = mysqli_query($connect, " SELECT *
 							FROM inside
 							WHERE type_id =$type_id");
 		mysqli_close($connect);
@@ -211,13 +234,17 @@
 		$num =mysqli_num_rows($techtype);
 		$row=mysqli_fetch_row($techtype);
 
-		echo "<br><h2>Size</h2>" ;
-		echo "<div id='tech' class='active_" . html_entity_decode($row[3]) . "'>Lines</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Squares</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'> Lines / Notebook</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Notes right / Diary left</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Academic Diary</div>";
-		echo "<div id='tech' class='active_" . html_entity_decode($row[8]) . "'>Note right / Academic Diary left</div>";
+		echo "<div id='techcont'>";
+			echo "<h2>Layout</h2>" ;
+			echo "<div id='tech' class='active_" . html_entity_decode($row[3]) . "'>Lines</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Squares</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'> Lines / Notebook</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Notes right / Diary left</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Academic Diary</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[8]) . "'>Note right / Academic Diary left</div>";
+		echo "</div>";
+		echo "</div>";
+		echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
 	}
 // NAVIGATION GLOBAL
 	function PrevColl ($coll_id){

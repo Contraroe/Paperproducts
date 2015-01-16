@@ -30,4 +30,5 @@
 </head>
 <body>
 <?php include "_php/error.php" ?>
+<?php include "_includes/socialinfo.php" ?>
 <?php include "_functions/functions.php" ?>

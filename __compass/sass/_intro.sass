@@ -1,0 +1,62 @@
+#intro
+	@include cover-img("../_img/bg_1.jpg", top center , no-repeat, cover)
+	height: 100vh //TIJDELIJKE VERSIE / NORMAL 900px
+	overflow: hidden
+	box-shadow: inset 0px -30px 50px $zwart_10
+	#cont
+		width: 1224px
+		height: 100vh
+		margin: auto
+		overflow: auto
+		background-color: $none
+		#arrows,
+		#logo,
+		#test
+			position: absolute
+			width: 150px
+			height: 60px
+			margin-left: -75px
+			margin-top: 30px
+			border: 0px solid $none
+		#logo
+			width: 120px
+			height: 120px
+			left: 50%
+			margin-left: -60px
+			margin-top: -50px
+			@include cover-img("../_img/logo/logo_b.svg", center , no-repeat, 80%)
+		#arrows
+			width: 150px
+			height: 60px
+			left: 50%
+			margin-left: -75px
+			margin-top: 30px
+			@include cover-img("../_img/logo/arrows.png", center , no-repeat, 70%)
+		h1#intro_title
+			position: relative
+			display: block
+			width: 100%
+			margin: 0
+			padding: 0
+			font-size: 800%
+			font-family: $title
+			color: $wit_10
+			font-weight: 400
+			text-transform: uppercase
+			text-align: center
+			top: 20%
+			margin-top: 0px
+			line-height: 100px
+			text-shadow: 5px 5px 10px $zwart_5
+			display: none
+			span
+				display: block
+				font-size: 70%
+				margin-top: 60px //TIJDELIJKE VERSIE / NORMAL 40px
+				padding: 5px
+				width: auto
+				font-weight: 00
+				text-shadow: 2px 2px 5px $zwart_5
+			&.it_color
+				margin-top: 100px
+				color: $bruin_10

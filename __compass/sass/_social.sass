@@ -1,0 +1,176 @@
+#social_cont
+	position: fixed
+	width: 40px
+	z-index: 99
+	color: $wit_10
+	top: 50%
+	margin-top: -150px
+	display: block
+	z-index: 10
+	left: 40px
+	color: $wit_10
+	font-family: $title
+	ul
+		list-style-type:  none
+		li
+			background-color: $zwart_5
+			height: 40px
+			width: 40px
+			margin-left: -40px
+			text-align: center
+			border: 1px solid $wit_1
+			color: $wit_10
+			font-weight: bolder
+			cursor: pointer
+			box-shadow: 2px 2px 2px $zwart_2
+			&:hover
+				background-color: $turk_10
+			a
+				background-color: $none
+				display: block
+				width: 100%
+				height: 100%
+		.twitter
+			@include social-img("../_img/logo/twitter.png")
+			background-color: $twitter_10
+		.facebook
+			background-color: $facebook_10
+			@include social-img("../_img/logo/facebook.png")
+		.linked
+			background-color: $linked_10
+			@include social-img("../_img/logo/linked.png")
+		li.twitter2
+			background-color: $twitter_5
+		li.facebook2
+			background-color: $facebook_5
+		li.linked2
+			background-color: $linked_5
+		.count
+			padding: 5px 0px 5px 0px
+			height: auto
+			background-color: $twitter_5
+			text-align: center
+			font-size: 90%
+			margin-bottom: 5px
+			cursor: auto
+		.lannoo
+			@include cover-img("../_img/logo/logo.svg", center, no-repeat, 70%)
+			margin-top: 20px
+			background-color: $grey_10
+			cursor: auto
+			&:hover
+				background-color: $grey_10
+		#digi
+			background-color: $zwart_8
+			margin-bottom: 0px
+			width: 120px
+			font-size: 100%
+			cursor: pointer
+			text-align: left
+			padding-left: 5px
+			color: $wit_10
+			&:hover
+				background-color: $grey_10
+			a 
+				color: $wit_10
+		#diaries
+			display: block
+			@extend #digi
+			background-color: $zwart_8
+			cursor: pointer
+			width: 130px
+
+			&:hover
+				background-color: $grey_10
+		#subscribe
+			@extend #digi
+			width: 95px
+			margin-bottom: 0px
+		#goto
+			@extend #digi
+			width: 50px
+// Newsletter SUBSCRIBE FORM
+#subscribeform
+	z-index: 9
+	position: absolute
+	width: 100%
+	height: 100%
+	background-color: $zwart_6
+	form
+		position: relative
+		width: 210px
+		height: auto
+		background-color: $wit_10
+		border-radius: 15px
+		top: 50%
+		left: 50%
+		margin-left: -125px
+		margin-top: -200px
+		padding: 20px
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5)
+		h1
+			font-size: 180%
+			text-align: left
+			color: $zwart_6
+			span
+				color: $turk_10
+		label
+			display: block
+			position: relative
+			color: $zwart_6
+			width: 100%
+			height: 20px
+			text-align: left
+			margin-top: 10px
+		input, select
+			width: 100%
+			border: none
+			height: 25px
+			border-radius: 5px
+			background-color: $zwart_1
+			font-size: 96%
+			font-style: italic
+			text-align: left
+			font-weight: 400
+			color: $zwart_5
+			padding-left: 2%
+			padding-right: 2%
+			margin-left: -2%
+		select
+			margin-bottom: 20px
+			margin-top: 1px
+			height: 30px
+			font-weight: 400
+			font-size: 90%
+			font-style: italic
+			color: $zwart_5
+			width: 104%
+		input[type="submit"]
+			background-color: $turk_10
+			color: $wit_10
+			height: 30px
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 085)
+			font-style: normal
+			font-weight: 400
+			text-align: center
+			width: 104%
+			&:hover
+				box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 085)
+				background-color: $zwart_5
+		#close
+			position: absolute
+			background-color: $turk_10
+			width: 30px
+			height: 30px
+			border-radius: 15px
+			color: $wit_10
+			vertical-align: middle
+			top: -15px
+			right: -15px
+			line-height: 30px
+			cursor: pointer
+			text-align: center
+			font-weight: 800
+			&:hover
+				color: $turk_10
+				background-color: $zwart_10

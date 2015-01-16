@@ -65,6 +65,11 @@ html
     font-size: 100% /* 1 */
     -ms-text-size-adjust: 100% /* 2 */
     -webkit-text-size-adjust: 100% /* 2 */
+    -webkit-font-smoothing: antialiased
+    -moz-font-smoothing: antialiased
+    font-smoothing: antialiased
+    text-rendering: optimizeLegibility
+    font-smooth: always
 
 
 /**
@@ -437,7 +442,7 @@ button
     -webkit-appearance: button /* 2 */
     cursor: pointer /* 3 */
     *overflow: visible  /* 4 */
-html input[type="button"], /* 1 */
+// html input[type="button"], /* 1 */
 input[type="reset"],
 input[type="submit"]
     -webkit-appearance: button /* 2 */
