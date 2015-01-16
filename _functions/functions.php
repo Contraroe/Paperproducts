@@ -1,6 +1,4 @@
 <?php
-
-
 // COLLECTION NAVIGATION
 
 	function AllColl () {
@@ -51,7 +49,6 @@
 		echo $row[2] ;
 
 	}
-
 // DESIGN INFO
 
 	function GetDesign ($coll_id, $coll_sub_id) {
@@ -110,7 +107,6 @@
 		echo $row[0] ;
 
 	}
-
 // TECHNICAL INFO
 	function GetTech () {
 		include "_php/db_config.php";
@@ -139,7 +135,7 @@
 			$type_id=html_entity_decode($row[1]);
 
 
-			if ($test === $row[1]) {
+			if ($test == $row[1]) {
 				$active = "active";
 			} else {
 				$active = "no";
@@ -194,7 +190,7 @@
 			echo "<h2>Binding</h2>";
 			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Glued</div>";
 			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'>Wire-O</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Sown</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Sewn</div>";
 		echo "</div>";
 		echo "<div id='techcont'>";
 			echo "<h2>Corner</h2>" ;
@@ -253,7 +249,7 @@
 
 		include "_functions/variables.php";
 
-		$query=mysqli_query($connect, " SELECT coll_name FROM collections WHERE coll_active = '1'");
+		$query=mysqli_query($connect, " SELECT coll_name FROM collections WHERE coll_active = 1");
 
 		$numa=mysqli_num_rows($query);
 
@@ -278,12 +274,12 @@
 		include "_php/db_connect.php";
 
 		include "_functions/variables.php";
-		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = '1'");
+		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1");
 
 
 		$numa=mysqli_num_rows($query);
 
-		if ($coll_id ==$numa) {
+		if ($coll_id == $numa) {
 			$next_id = 1;
 		} else {
 			$next_id = $coll_id + 1;

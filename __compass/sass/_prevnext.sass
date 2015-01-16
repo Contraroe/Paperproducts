@@ -1,35 +1,50 @@
-#navb
-	width: 50%
-	float: left
-	height: 150px
-	cursor: pointer
-	text-align: left
-	line-height: 150px
-	vertical-align: middle
-	a
-		color: $wit_10
-		display: block
-		width: 100%
-		height: 100%
-	#imgnav
-		position: relative
-		width: 30px
-		height: 30px
+#gnav
+	background-color: $bruin_10
+	box-shadow: 0px -20px 30px $bruin_5
+	#navb
+		width: 50%
 		float: left
-		margin-left: 200px
-		margin-right: 30px
-		margin-top: 60px
-		border-radius: 16px
-		border: 1px solid $wit_10
-	#imgnav.imgnext
-		float: right
-		margin-right: 200px
-		margin-left: 30px
-	&:hover
+		height: 100%
+		cursor: pointer
+		text-align: left
+		line-height: 150px
+		vertical-align: middle
 		a
-			color: $zwart_10
+			color: $wit_10
+			display: block
+			width: 100%
+			height: 100%
 		#imgnav
-			border: 1px solid $zwart_10
-#navb.next
-	a
-		text-align: right
+			position: relative
+			width: 50px
+			height: 50px
+			float: left
+			margin-left: 200px
+			margin-right: 30px
+			margin-top: 50px
+			border-radius: 25px
+			border: 1px solid $wit_5
+			z-index: 20
+			cursor: pointer
+			line-height: 50px
+			color: $wit_10
+			font-family: $title
+			font-size: 160%
+			font-weight: 300
+			line-height: 50px
+			text-align: center
+			&:before
+				content: '>'
+		#imgnav.imgprev
+			transform: rotate(180deg)
+
+		#imgnav.imgnext
+			float: right
+			margin-right: 200px
+			margin-left: 30px
+		&:hover
+			a
+				color: $turk_10
+	#navb.next
+		a
+			text-align: right

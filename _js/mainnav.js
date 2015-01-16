@@ -20,14 +20,6 @@ $(document).ready(function() {
 			bottom:'-300px',
 			'margin-left': '140px'
 		},'slow');
-		$("#picker").hover(
-			function(){
-			$(this).filter(':not(:animated)').animate({
-				bottom:'-350px',
-				'margin-left': '140px'
-			},'slow');
-			// This only fires if the row is not undergoing an animation when you mouseover it
-		});
 		$('#coverimg').fadeOut( "slow", function() {});
 	});
 
@@ -40,6 +32,13 @@ $(document).ready(function() {
 	$('#picker').click(function() {
 		$('#coverimg').fadeOut( "slow", function() {});
 
+	});
+
+	$('.collnav').mouseleave(function(){
+		$(this).fadeOut( "slow", function() {});
+		$('.colltoggle').removeClass('active');
+		$('.title_ani').fadeIn( "slow", function() {});
+		$('#coverimg').fadeIn( "slow", function() {});
 	});
 
 
