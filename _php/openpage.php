@@ -27,7 +27,7 @@
 	<script type="text/javascript" src="_js/scrollbars/jquery.mousewheel.js"></script>
 	<!-- the jScrollPane script -->
 	<script type="text/javascript" src="_js/scrollbars/jquery.jscrollpane.min.js"></script>
-</head>
+	<script type="text/javascript" src="_js/mouseover.js"></script>
 <body>
 <?php include "_php/error.php" ?>
 <?php include "_includes/socialinfo.php" ?>

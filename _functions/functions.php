@@ -85,13 +85,19 @@
 		$j=3;
 		while ( $j < 16 ) {
 			if ( $row[$j] == NULL ) {}else{
-			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
+//			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
+//			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,\"".$row[$j] . "\")' /></a></li>";
+			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)' /></a></li>";
+
 			}
 			$j = $j + 2;
 		}
 
 		echo "</ul>";
-		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+//		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+//		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1' /></div>";
+		echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
+
 	}
 
 
@@ -107,6 +113,60 @@
 		echo $row[0] ;
 
 	}
+
+	function GetDesignNew ($coll_id, $coll_sub_id) {
+		include "_php/db_config.php";
+		include "_php/db_connect.php";
+
+		include "_functions/variables.php";
+
+		$result = mysqli_query($connect, " SELECT * FROM design WHERE coll_id = $coll_id ");
+		mysqli_close($connect);
+
+		$row = mysqli_fetch_row ($result);
+		echo "	<ul id='back'>
+				<li class='fake_7'></li>
+				<li class='fake_6'></li>
+				<li class='fake_5'></li>
+				<li class='fake_4'></li>
+				<li class='fake_3'></li>
+				<li class='fake_2'></li>
+				<li class='fake_1'></li>
+			</ul>
+			<ul id='back2'>
+				<li class='fake_7'></li>
+				<li class='fake_6'></li>
+				<li class='fake_5'></li>
+				<li class='fake_4'></li>
+				<li class='fake_3'></li>
+				<li class='fake_2'></li>
+				<li class='fake_1'></li>
+			</ul>";
+		echo "<ul>";
+		
+		
+
+		$rowtrimmed = trim($row[3]);
+		echo "<li><img src='_img/color/" . $rowtrimmed . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[3] . "\",$type_id)' /></a></li>";
+		$rowtrimmed = trim($row[5]);
+		echo "<li><img src='_img/color/" . $rowtrimmed . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[5] . "\",$type_id)' /></a></li>";
+
+		$rowtrimmed = trim($row[7]);
+		echo "<li><img src='_img/color/" . $rowtrimmed . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[7] . "\",$type_id)' /></a></li>";
+
+		$rowtrimmed = trim($row[9]);
+		echo "<li><img src='_img/color/" . $rowtrimmed . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[9] . "\",$type_id)' /></a></li>";
+
+		$rowtrimmed = trim($row[11]);
+		echo "<li><img src='_img/color/" . $rowtrimmed . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[11] . "\",$type_id)' /></a></li>";
+
+		$rowtrimmed = trim($row[13]);
+		echo "<li><img src='_img/color/" . $rowtrimmed . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[13] . "\",$type_id)' /></a></li>";
+			
+		echo "</ul>";
+		echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".png' id='1_1'  /></div>";
+	}
+
 // TECHNICAL INFO
 	function GetTech () {
 		include "_php/db_config.php";
