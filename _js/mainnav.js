@@ -41,6 +41,9 @@ $(document).ready(function() {
 		$('#coverimg').fadeIn( "slow", function() {});
 	});
 
+	$('.pos_0').remove();
+
+	// $('#techtypecont li.pos_1:first').addClass('active');
 
 
 
