@@ -85,13 +85,19 @@
 		$j=3;
 		while ( $j < 16 ) {
 			if ( $row[$j] == NULL ) {}else{
-			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
+//			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
+//			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,\"".$row[$j] . "\")' /></a></li>";
+			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)' /></a></li>";
+
 			}
 			$j = $j + 2;
 		}
 
 		echo "</ul>";
-		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+//		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+//		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1' /></div>";
+		echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
+
 	}
 
 
@@ -107,6 +113,9 @@
 		echo $row[0] ;
 
 	}
+
+	
+
 // TECHNICAL INFO
 	function GetTech () {
 		include "_php/db_config.php";
