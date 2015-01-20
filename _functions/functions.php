@@ -58,7 +58,7 @@
 		$numa=mysqli_num_rows($query);
 		//collecties in array steken RR 21/01/2015
 		Global $aCollection;
-		Global $coll_atel;
+	//	Global $coll_atel;
 
 		$c=0;
 		while($row=mysqli_fetch_assoc($query)) {
@@ -370,8 +370,14 @@
 
 		include "_functions/variables.php";
 		Global $aCollection;
-
-		$prev_coll_atel = $coll_atel - 1;
+		$arrlength = count($aCollection) - 1;
+		if($coll_atel <= 0 ) {
+			$prev_coll_atel = $arrlength;
+		}
+		else {
+			$prev_coll_atel = $coll_atel - 1;	
+		}	
+		
 		$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
 		$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
 
@@ -383,8 +389,17 @@
 
 		include "_functions/variables.php";
 		Global $aCollection;
+		$arrlength = count($aCollection) - 1;
+		$next_sub_id = $coll_id . "_1";
+//		print_r($aCollection);
 
-		$next_coll_atel = $coll_atel + 1;
+		if($coll_atel < $arrlength) {
+		   $next_coll_atel = $coll_atel + 1;
+		}
+		else {
+			$next_coll_atel = 0;
+		}
+		
 		$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
 		$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
 
