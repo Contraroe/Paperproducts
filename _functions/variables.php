@@ -17,6 +17,7 @@
 	} else {
 		$type_id = 1;
 	}
+	$coll_atel = $_REQUEST['coll_atel'];
 //	if (isset($_REQUEST['aCollection'])) {
 //		$aCollection[] = $_REQUEST['aCollection'];
 //	} else {

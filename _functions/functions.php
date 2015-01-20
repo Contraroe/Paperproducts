@@ -71,7 +71,7 @@
 			$c++;
 		};
 	//	print_r($aCollection);
-		
+
 		//$i=0;
 
 		//while ($i < $numa) {
@@ -149,7 +149,7 @@
 		//echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'>
 		// 	onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  is niet nodig
 		echo "<li>
-					<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' 				
+					<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C'
 					    onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  />
 			  </li>";
 
@@ -159,8 +159,8 @@
 
 		echo "</ul>";
 		//  zonder mouseover
-		//	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>"; 
-		// RR 20/01/2015 met mouseover    
+		//	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+		// RR 20/01/2015 met mouseover
 		//   echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
 		// met mouseover zonder a href
   	       echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
@@ -180,9 +180,6 @@
 		echo $row[0] ;
 
 	}
-
-	
-
 // TECHNICAL INFO
 	function GetTech () {
 		include "_php/db_config.php";
@@ -203,7 +200,7 @@
 		$techactive = mysqli_query($connect, " SELECT * FROM collections WHERE coll_id = $coll_id ");
 		$row2 = mysqli_fetch_row($techactive);
 
-		
+
 
 
 		while ($i < $num) {
@@ -218,7 +215,7 @@
 				$active = "no";
 			};
 
-			
+
 
 			echo "<li class='pos_" . $row2[$b] . "'><a  class='". $active . " pos_" . $row2[$b] . "' href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id#techinfo'>" . $type_name . "</a></li>";
 
@@ -327,7 +324,7 @@
 		echo "</div>";
 	//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
 	    echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
- 		
+
 	}
 
 
@@ -353,39 +350,41 @@
 	}
 
 
-
-	function NextCollNew ($coll_id,$coll_atel){
-//		include "_php/db_config.php";
-//		include "_php/db_connect.php";
+	function PrevCollNew ($coll_id,$coll_atel){
 
 		include "_functions/variables.php";
-
-//		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $coll_id < $next_coll_id ");	
-//		mysqli_close($connect);
-
-//		$row = mysqli_fetch_row ($query);
 		Global $aCollection;
-		
-		$next_sub_id = $coll_atel . "_1";
-//		print_r($aCollection);
-//		$coll_id=$coll_id + 1;
-		$next_coll_atel = $coll_atel + 1;
-//		$next_sub_id = $coll_atel . "_1";
-		$next_sub_id = html_entity_decode($aCollection[$coll_atel]['coll_id']) . "_1";
-		$next_coll_id = html_entity_decode($aCollection[$coll_atel]['coll_id']);
-		$coll_name = html_entity_decode($aCollection[$coll_atel]['coll_name']);
-//		return $coll_atel;
-		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
-		
+
+		$prev_coll_atel = $coll_atel - 1;
+		$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
+		$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
+
+
+		echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+
 	}
-		
+
+	function NextCollNew ($coll_id,$coll_atel){
+
+		include "_functions/variables.php";
+		Global $aCollection;
+
+		$next_coll_atel = $coll_atel + 1;
+		$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
+		$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
+
+
+		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+
+	}
+
 	function NextColl ($coll_id){
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
 
 		include "_functions/variables.php";
 		$next_coll_id = $coll_id + 1;
-		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $next_coll_id ");	
+		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $next_coll_id ");
 		mysqli_close($connect);
 
 		$row = mysqli_fetch_row ($query);
