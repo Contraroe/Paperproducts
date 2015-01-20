@@ -20,7 +20,7 @@ $(document).ready(function() {
 			bottom:'-300px',
 			'margin-left': '140px'
 		},'slow');
-		$('#coverimg').fadeOut( "slow", function() {});
+//		$('#coverimg').fadeOut( "slow", function() {});
 	});
 
 	$('#collnav').click(function() {
@@ -29,10 +29,10 @@ $(document).ready(function() {
 		$('#coverimg').fadeOut( "slow", function() {});
 
 	});
-	$('#picker').click(function() {
-		$('#coverimg').fadeOut( "slow", function() {});
+//	$('#picker').click(function() {
+//		$('#coverimg').fadeOut( "slow", function() {});
 
-	});
+//	});
 
 	$('.collnav').mouseleave(function(){
 		$(this).fadeOut( "slow", function() {});

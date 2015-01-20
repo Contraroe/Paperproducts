@@ -37,6 +37,61 @@
 		echo "</ul><div></div>";
 	}
 
+	function AllCollNew () {
+		include "_php/db_config.php";
+		include "_php/db_connect.php";
+
+
+		echo "<div id='cont' class='mainnav'><ul>
+				<li class='home'><a href='index.php'>Home</a></li>
+				<li class='colltoggle'>Collections</li>
+				<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
+
+			</ul></div>
+			<div id='border'></div>
+			<div id='cont' class='collnav'><ul id='collnav'>";
+
+
+		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = '1'");
+		mysqli_close($connect);
+
+		$numa=mysqli_num_rows($query);
+		//collecties in array steken RR 21/01/2015
+		Global $aCollection;
+		Global $coll_atel;
+
+		$c=0;
+		while($row=mysqli_fetch_assoc($query)) {
+			$aCollection[] = $row;
+			$coll_name=html_entity_decode($aCollection[$c]['coll_name']);
+			$coll_id=html_entity_decode($aCollection[$c]['coll_id']);
+			$coll_sub_id= $coll_id . "_1";
+			$coll_atel=html_entity_decode($c);
+			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&coll_atel=$c'>" . $coll_name . "</a></li>";
+			$c++;
+		};
+	//	print_r($aCollection);
+		
+		//$i=0;
+
+		//while ($i < $numa) {
+		//	mysqli_data_seek($query,$i);
+		//	$row=mysqli_fetch_row($query);
+		//	$coll_name=html_entity_decode($row[2]);
+		//	$coll_id=html_entity_decode($row[1]);
+		//	$coll_sub_id= $coll_id . "_1";
+
+		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id'>" . $coll_name . "</a></li>";
+
+		//	$i++;
+		//};
+
+		echo "</ul><div></div>";
+
+
+
+	}
+
 	function ActiveColl ($coll_id) {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
@@ -85,18 +140,30 @@
 		$j=3;
 		while ( $j < 16 ) {
 			if ( $row[$j] == NULL ) {}else{
-			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
-//			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,\"".$row[$j] . "\")' /></a></li>";
-//			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)' /></a></li>";
+		// zonder mouseover
+		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
+		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,\"".$row[$j] . "\")' /></a></li>";
+		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)' /></a></li>";
+		// RR 21/01/2015 met mouseover en met a href en zonder onclick
+		// echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  /></a></li>";
+		//echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'>
+		// 	onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  is niet nodig
+		echo "<li>
+					<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' 				
+					    onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  />
+			  </li>";
 
 			}
 			$j = $j + 2;
 		}
 
 		echo "</ul>";
-		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
-//		echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1' /></div>";
-// echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
+		//  zonder mouseover
+		//	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>"; 
+		// RR 20/01/2015 met mouseover    
+		//   echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
+		// met mouseover zonder a href
+  	       echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
 
 	}
 
@@ -258,8 +325,14 @@
 			echo "<div id='tech' class='active_" . html_entity_decode($row[8]) . "'>Note right / Academic Diary left</div>";
 		echo "</div>";
 		echo "</div>";
-		echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+	//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+	    echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
+ 		
 	}
+
+
+
+
 // NAVIGATION GLOBAL
 	function PrevColl ($coll_id){
 		include "_php/db_config.php";
@@ -281,13 +354,38 @@
 
 
 
+	function NextCollNew ($coll_id,$coll_atel){
+//		include "_php/db_config.php";
+//		include "_php/db_connect.php";
+
+		include "_functions/variables.php";
+
+//		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $coll_id < $next_coll_id ");	
+//		mysqli_close($connect);
+
+//		$row = mysqli_fetch_row ($query);
+		Global $aCollection;
+		
+		$next_sub_id = $coll_atel . "_1";
+//		print_r($aCollection);
+//		$coll_id=$coll_id + 1;
+		$next_coll_atel = $coll_atel + 1;
+//		$next_sub_id = $coll_atel . "_1";
+		$next_sub_id = html_entity_decode($aCollection[$coll_atel]['coll_id']) . "_1";
+		$next_coll_id = html_entity_decode($aCollection[$coll_atel]['coll_id']);
+		$coll_name = html_entity_decode($aCollection[$coll_atel]['coll_name']);
+//		return $coll_atel;
+		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+		
+	}
+		
 	function NextColl ($coll_id){
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
 
 		include "_functions/variables.php";
-
-		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $coll_id + 1 ");	
+		$next_coll_id = $coll_id + 1;
+		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $next_coll_id ");	
 		mysqli_close($connect);
 
 		$row = mysqli_fetch_row ($query);
@@ -297,6 +395,5 @@
 		$coll_name = $row[2];
 
 		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id'>" . $coll_name . "</a>";
-
 	}
 ?>

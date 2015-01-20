@@ -1,3 +1,3 @@
 <header >
-		<?php AllColl () ; ?>
+		<?php AllCollNew () ; ?>
 </header>
