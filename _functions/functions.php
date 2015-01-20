@@ -348,36 +348,6 @@
 
 		echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id'> " . $coll_name . "</a>";
 	}
-
-
-	function PrevCollNew ($coll_id,$coll_atel){
-
-		include "_functions/variables.php";
-		Global $aCollection;
-
-		$prev_coll_atel = $coll_atel - 1;
-		$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
-		$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
-
-
-		echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
-
-	}
-
-	function NextCollNew ($coll_id,$coll_atel){
-
-		include "_functions/variables.php";
-		Global $aCollection;
-
-		$next_coll_atel = $coll_atel + 1;
-		$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
-		$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
-
-
-		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
-
-	}
-
 	function NextColl ($coll_id){
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
@@ -394,5 +364,31 @@
 		$coll_name = $row[2];
 
 		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id'>" . $coll_name . "</a>";
+	}
+
+	function PrevCollNew ($coll_id,$coll_atel){
+
+		include "_functions/variables.php";
+		Global $aCollection;
+
+		$prev_coll_atel = $coll_atel - 1;
+		$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
+		$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
+
+
+		echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+	}
+
+	function NextCollNew ($coll_id,$coll_atel){
+
+		include "_functions/variables.php";
+		Global $aCollection;
+
+		$next_coll_atel = $coll_atel + 1;
+		$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
+		$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
+
+
+		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
 	}
 ?>
