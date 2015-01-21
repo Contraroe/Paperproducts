@@ -23,6 +23,7 @@
 
 	$coll_atel =$_REQUEST['coll_atel'];
 
+
 //	if (isset($_REQUEST['aCollection'])) {
 //		$aCollection[] = $_REQUEST['aCollection'];
 //	} else {
