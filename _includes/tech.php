@@ -1,6 +1,6 @@
 <section id="techinfo">
 	<div id="cont">
-		<h1><?php ActiveColl ($coll_id,$coll_atel); ?> <span>Finishing options<span></h1>
+		<h1><?php ActiveColl ($coll_id); ?> <span>Finishing options<span></h1>
 	</div>
 	<div id="cont" class="techmainnav">
 		<?php
