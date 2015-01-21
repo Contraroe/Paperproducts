@@ -306,9 +306,12 @@
 		Global $aCollection;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 		$prev_coll_atel = $coll_atel - 1;
 =======
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 		$arrlength = count($aCollection) - 1;
@@ -349,8 +352,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		$next_coll_atel = $coll_atel + 1;
 =======
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 		if($coll_atel < $arrlength) {
