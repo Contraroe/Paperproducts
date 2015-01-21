@@ -29,7 +29,7 @@
 			$coll_id=html_entity_decode($row[1]);
 			$coll_sub_id= $coll_id . "_1";
 
-			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id'>" . $coll_name . "</a></li>";
+			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id$coll_atel=$coll_atel'>" . $coll_name . "</a></li>";
 
 			$i++;
 		};
@@ -67,29 +67,10 @@
 			$coll_id=html_entity_decode($aCollection[$c]['coll_id']);
 			$coll_sub_id= $coll_id . "_1";
 			$coll_atel=html_entity_decode($c);
-			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&coll_atel=$c'>" . $coll_name . "</a></li>";
+			echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&coll_atel=$coll_atel'>" . $coll_name . "</a></li>";
 			$c++;
 		};
-	//	print_r($aCollection);
-
-		//$i=0;
-
-		//while ($i < $numa) {
-		//	mysqli_data_seek($query,$i);
-		//	$row=mysqli_fetch_row($query);
-		//	$coll_name=html_entity_decode($row[2]);
-		//	$coll_id=html_entity_decode($row[1]);
-		//	$coll_sub_id= $coll_id . "_1";
-
-		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id'>" . $coll_name . "</a></li>";
-
-		//	$i++;
-		//};
-
 		echo "</ul><div></div>";
-
-
-
 	}
 
 	function ActiveColl ($coll_id) {
@@ -102,7 +83,6 @@
 		$row = mysqli_fetch_row ($result);
 
 		echo $row[2] ;
-
 	}
 // DESIGN INFO
 
@@ -150,7 +130,7 @@
 		// 	onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  is niet nodig
 		echo "<li>
 					<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C'
-					    onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  />
+					    onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  />
 			  </li>";
 
 			}
@@ -164,9 +144,7 @@
 		//   echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
 		// met mouseover zonder a href
   	       echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
-
 	}
-
 
 	function ActiveType ($type_id) {
 		include "_php/db_config.php";
@@ -178,13 +156,11 @@
 		$row = mysqli_fetch_row ($result);
 
 		echo $row[0] ;
-
 	}
 // TECHNICAL INFO
 	function GetTech () {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
-
 		include "_functions/variables.php";
 
 		echo "<ul id='techtypecont'>";
@@ -202,7 +178,6 @@
 
 
 
-
 		while ($i < $num) {
 			mysqli_data_seek($techtype,$i);
 			$row=mysqli_fetch_row($techtype);
@@ -217,7 +192,7 @@
 
 
 
-			echo "<li class='pos_" . $row2[$b] . "'><a  class='". $active . " pos_" . $row2[$b] . "' href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id#techinfo'>" . $type_name . "</a></li>";
+			echo "<li class='pos_" . $row2[$b] . "'><a  class='". $active . " pos_" . $row2[$b] . "' href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id&coll_atel=$coll_atel#techinfo'>" . $type_name . "</a></li>";
 
 			$i++;
 			$b++;
@@ -322,73 +297,50 @@
 			echo "<div id='tech' class='active_" . html_entity_decode($row[8]) . "'>Note right / Academic Diary left</div>";
 		echo "</div>";
 		echo "</div>";
-	//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
+		//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
 	    echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
-
 	}
-
-
-
-
 // NAVIGATION GLOBAL
-	function PrevColl ($coll_id){
-		include "_php/db_config.php";
-		include "_php/db_connect.php";
-
-		include "_functions/variables.php";
-
-		$query=mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $coll_id - 1");
-		mysqli_close($connect);
-
-		$row = mysqli_fetch_row ($query);
-
-		$prev_sub_id = $row[1] . "_1";
-		$prev_coll_id = $row[1];
-		$coll_name = $row[2];
-
-		echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id'> " . $coll_name . "</a>";
-	}
-	function NextColl ($coll_id){
-		include "_php/db_config.php";
-		include "_php/db_connect.php";
-
-		include "_functions/variables.php";
-		$next_coll_id = $coll_id + 1;
-		$query = mysqli_query($connect, " SELECT * FROM collections WHERE coll_active = 1 AND coll_id = $next_coll_id ");
-		mysqli_close($connect);
-
-		$row = mysqli_fetch_row ($query);
-
-		$next_sub_id = $row[1] . "_1";
-		$next_coll_id = $row[1];
-		$coll_name = $row[2];
-
-		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id'>" . $coll_name . "</a>";
-	}
-
-	function PrevCollNew ($coll_id,$coll_atel){
-
+	function PrevColl ($coll_id,$coll_atel){
 		include "_functions/variables.php";
 		Global $aCollection;
 
 		$prev_coll_atel = $coll_atel - 1;
-		$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
-		$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
 
+		function endKey($array){
+			end($array);
+			return key($array);
+		}
 
-		echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+		if (isset($aCollection[$prev_coll_atel])) {
+			$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
+			$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
+			echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+		} else {
+			$prev_coll_atel = endKey($aCollection);
+			$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
+			$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
+			echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+		}
 	}
 
-	function NextCollNew ($coll_id,$coll_atel){
-
+	function NextColl ($coll_id,$coll_atel){
 		include "_functions/variables.php";
 		Global $aCollection;
 
 		$next_coll_atel = $coll_atel + 1;
-		$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
-		$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
 
-
-		echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+		if (isset($aCollection[$next_coll_atel])) {
+			$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
+			$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
+			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+		} else {
+			$next_coll_atel = 0;
+			$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
+			$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
+			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+		}
 	}
+
+
 ?>
