@@ -106,7 +106,7 @@
 		echo "</ul>";
 
 
-		echo "	<ul id='back2'>";@
+		echo "	<ul id='back2'>";
 		$b = 7;
 		while ( $b > 0) {
 			echo "<li class='fake_$b'></li>";
@@ -176,8 +176,6 @@
 		$techactive = mysqli_query($connect, " SELECT * FROM collections WHERE coll_id = $coll_id ");
 		$row2 = mysqli_fetch_row($techactive);
 
-
-
 		while ($i < $num) {
 			mysqli_data_seek($techtype,$i);
 			$row=mysqli_fetch_row($techtype);
@@ -190,8 +188,6 @@
 				$active = "no";
 			};
 
-
-
 			echo "<li class='pos_" . $row2[$b] . "'><a  class='". $active . " pos_" . $row2[$b] . "' href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id&coll_atel=$coll_atel#techinfo'>" . $type_name . "</a></li>";
 
 			$i++;
@@ -200,6 +196,33 @@
 		};
 
 		echo "</ul>";
+	}
+
+	function GetTechNew () {
+		include "_php/db_config.php";
+		include "_php/db_connect.php";
+		include "_functions/variables.php";
+
+		$typesActive = mysqli_query ($connect, " SELECT Notebloc, Wirebloc, Writer, LBook, Vbook, Scribble FROM collections WHERE coll_id = $coll_id");
+		$aTypeAct= mysqli_fetch_row($typesActive);
+		PrintArr($aTypeAct);
+
+		//  LIST POSIBLE FINISHING TYPES
+		$types = mysqli_query($connect, " SELECT type_id, type_name FROM finishing ");
+		echo "<ul id='techtypecont'>";
+		$ty = 0;
+		while ( $row = mysqli_fetch_assoc($types)) {
+			$aTypes[] = $row;
+			$type_name = $aTypes[$ty]['type_name'];
+			$type_id = $aTypes[$ty]['type_id'];
+			echo "<li class=''><a href=''>" . $type_name . "</a></li>";
+			$ty++;
+		}
+		echo "</ul>";
+		PrintArr ($aTypes);
+
+		$aCombi = array_merge_recursive($aTypeAct, $aTypes);
+		PrintArr ($aCombi);
 	}
 
 	function TechDetOne ($type_id) {
@@ -239,7 +262,7 @@
 		echo "<div id='outcont'>";
 		echo "<div id='techcont'>";
 			echo "<h2>Size</h2>" ;
-			echo "<div id='tech' class='active_1'>" . html_entity_decode($row[3]) . "</div>";
+			echo "<div id='tech' class='active_1'>" . html_entity_decode($row[3]) . $test . "</div>";
 		echo "</div>";
 		echo "<div id='techcont'>";
 			echo "<h2>Binding</h2>";
@@ -289,12 +312,12 @@
 
 		echo "<div id='techcont'>";
 			echo "<h2>Layout</h2>" ;
-			echo "<div id='tech' class='active_" . html_entity_decode($row[3]) . "'>Lines</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Squares</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'> Lines / Notebook</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Notes right / Diary left</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Academic Diary</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[8]) . "'>Note right / Academic Diary left</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[2]) . "'>Lines</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[3]) . "'>Squares</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'> Lines / Notebook</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'>Notes right / Diary left</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Academic Diary</div>";
+			echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Note right / Academic Diary left</div>";
 		echo "</div>";
 		echo "</div>";
 		//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
@@ -341,6 +364,10 @@
 			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
 		}
 	}
-
-
+// DEVELOPMENT
+	function PrintArr ($array) {
+		echo "<pre>";
+		print_r($array);
+		echo "</pre>";
+	}
 ?>

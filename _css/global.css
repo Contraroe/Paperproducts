@@ -723,20 +723,20 @@ header #cont.collnav ul li a:hover {
   width: 130px;
 }
 /* line 32, ../__compass/sass/_design.sass */
+#design #cont.colltitle ul li:hover {
+  opacity: 0.2;
+}
+/* line 34, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li a {
   width: auto;
   height: auto;
   border: none;
 }
-/* line 36, ../__compass/sass/_design.sass */
+/* line 38, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul li a img {
   width: 100% !important;
 }
-/* line 38, ../__compass/sass/_design.sass */
-#design #cont.colltitle ul li a img:hover {
-  opacity: 0.2;
-}
-/* line 40, ../__compass/sass/_design.sass */
+/* line 41, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back,
 #design #cont.colltitle ul#back2 {
   width: auto;
@@ -744,78 +744,78 @@ header #cont.collnav ul li a:hover {
   left: -25px;
   bottom: -200px;
 }
-/* line 46, ../__compass/sass/_design.sass */
+/* line 47, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li,
 #design #cont.colltitle ul#back2 li {
   margin-right: 5px;
   cursor: default;
 }
-/* line 49, ../__compass/sass/_design.sass */
+/* line 50, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_2,
 #design #cont.colltitle ul#back2 li.fake_2 {
   background-color: rgba(51, 36, 28, 0.1);
 }
-/* line 51, ../__compass/sass/_design.sass */
+/* line 52, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_3,
 #design #cont.colltitle ul#back2 li.fake_3 {
   background-color: rgba(51, 36, 28, 0.2);
 }
-/* line 53, ../__compass/sass/_design.sass */
+/* line 54, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_4,
 #design #cont.colltitle ul#back2 li.fake_4 {
   background-color: rgba(51, 36, 28, 0.3);
 }
-/* line 55, ../__compass/sass/_design.sass */
+/* line 56, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_5,
 #design #cont.colltitle ul#back2 li.fake_5 {
   background-color: rgba(51, 36, 28, 0.4);
 }
-/* line 57, ../__compass/sass/_design.sass */
+/* line 58, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_6,
 #design #cont.colltitle ul#back2 li.fake_6 {
   background-color: rgba(51, 36, 28, 0.5);
 }
-/* line 59, ../__compass/sass/_design.sass */
+/* line 60, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back li.fake_7,
 #design #cont.colltitle ul#back2 li.fake_7 {
   background-color: rgba(51, 36, 28, 0.6);
 }
-/* line 61, ../__compass/sass/_design.sass */
+/* line 62, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 {
   transform: rotate(-5deg);
   left: -50px;
   bottom: -250px;
 }
-/* line 65, ../__compass/sass/_design.sass */
+/* line 66, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li {
   margin-right: 5px;
   cursor: default;
 }
-/* line 68, ../__compass/sass/_design.sass */
+/* line 69, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li.fake_2 {
   background-color: rgba(171, 165, 134, 0.1);
 }
-/* line 70, ../__compass/sass/_design.sass */
+/* line 71, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li.fake_3 {
   background-color: rgba(171, 165, 134, 0.2);
 }
-/* line 72, ../__compass/sass/_design.sass */
+/* line 73, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li.fake_4 {
   background-color: rgba(171, 165, 134, 0.3);
 }
-/* line 74, ../__compass/sass/_design.sass */
+/* line 75, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li.fake_5 {
   background-color: rgba(171, 165, 134, 0.4);
 }
-/* line 76, ../__compass/sass/_design.sass */
+/* line 77, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li.fake_6 {
   background-color: rgba(171, 165, 134, 0.5);
 }
-/* line 78, ../__compass/sass/_design.sass */
+/* line 79, ../__compass/sass/_design.sass */
 #design #cont.colltitle ul#back2 li.fake_7 {
   background-color: rgba(171, 165, 134, 0.6);
 }
-/* line 80, ../__compass/sass/_design.sass */
+/* line 81, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg {
   position: relative;
   height: 600px;
@@ -824,16 +824,16 @@ header #cont.collnav ul li a:hover {
   margin-right: 5%;
   top: 120px;
   text-align: center;
-  display: none; 
+  display: none;
 }
-/* line 90, ../__compass/sass/_design.sass */
+/* line 91, ../__compass/sass/_design.sass */
 #design #cont.colltitle #coverimg img {
   height: 100%;
   margin: auto;
   border-radius: 5px;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
 }
-/* line 95, ../__compass/sass/_design.sass */
+/* line 96, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 {
   display: block;
   width: auto;
@@ -851,7 +851,7 @@ header #cont.collnav ul li a:hover {
   margin-bottom: 50px;
   display: none;
 }
-/* line 111, ../__compass/sass/_design.sass */
+/* line 112, ../__compass/sass/_design.sass */
 #design #cont.colltitle h1 span {
   display: block;
   font-size: 30%;
@@ -864,7 +864,7 @@ header #cont.collnav ul li a:hover {
   padding: 5px;
   width: auto;
 }
-/* line 122, ../__compass/sass/_design.sass */
+/* line 123, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav {
   position: absolute;
   width: 40px;
@@ -885,11 +885,11 @@ header #cont.collnav ul li a:hover {
   z-index: 20;
   cursor: pointer;
 }
-/* line 142, ../__compass/sass/_design.sass */
+/* line 143, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav:before {
   content: ">";
 }
-/* line 144, ../__compass/sass/_design.sass */
+/* line 145, ../__compass/sass/_design.sass */
 #design #cont.colltitle #scrollnav:hover {
   background-color: rgba(0, 0, 0, 0.5);
   font-weight: 300;
@@ -925,27 +925,27 @@ header #cont.collnav ul li a:hover {
   text-transform: none;
   margin-left: 20px;
 }
-/* line 23, ../__compass/sass/_tech.sass */
+/* line 24, ../__compass/sass/_tech.sass */
 #techinfo #cont.techmainnav {
   height: auto;
   margin-bottom: 60px;
 }
-/* line 26, ../__compass/sass/_tech.sass */
+/* line 27, ../__compass/sass/_tech.sass */
 #techinfo #cont.techmainnav ul li {
   display: block;
   height: auto;
   width: auto;
   margin: 0;
 }
-/* line 31, ../__compass/sass/_tech.sass */
+/* line 32, ../__compass/sass/_tech.sass */
 #techinfo #cont.techmainnav ul li .active {
   background-color: #33241c;
 }
-/* line 33, ../__compass/sass/_tech.sass */
+/* line 34, ../__compass/sass/_tech.sass */
 #techinfo #cont.techmainnav ul li:hover {
   background-color: #33241c;
 }
-/* line 35, ../__compass/sass/_tech.sass */
+/* line 36, ../__compass/sass/_tech.sass */
 #techinfo #cont.techmainnav ul li a {
   display: block;
   width: 100%;
@@ -956,32 +956,36 @@ header #cont.collnav ul li a:hover {
   text-transform: uppercase;
   padding: 5px 15px 5px 15px;
 }
-/* line 44, ../__compass/sass/_tech.sass */
+/* line 45, ../__compass/sass/_tech.sass */
 #techinfo #cont.techmainnav ul li a:hover, #techinfo #cont.techmainnav ul li a.active {
   color: white;
 }
-/* line 47, ../__compass/sass/_tech.sass */
+/* line 49, ../__compass/sass/_tech.sass */
+#techinfo #cont.techmainnav #techtypecont .activeType0 {
+  display: none;
+}
+/* line 51, ../__compass/sass/_tech.sass */
 #techinfo #cont {
   background-color: transparent;
 }
-/* line 49, ../__compass/sass/_tech.sass */
+/* line 53, ../__compass/sass/_tech.sass */
 #techinfo #cont,
 #techinfo a {
   color: white;
 }
-/* line 52, ../__compass/sass/_tech.sass */
+/* line 56, ../__compass/sass/_tech.sass */
 #techinfo #cont #tech,
 #techinfo a #tech {
   color: white;
   padding: 5px 10px 5px 10px;
   text-align: left;
 }
-/* line 56, ../__compass/sass/_tech.sass */
+/* line 60, ../__compass/sass/_tech.sass */
 #techinfo #cont .active_0,
 #techinfo a .active_0 {
   background-color: #00c8c8;
 }
-/* line 59, ../__compass/sass/_tech.sass */
+/* line 63, ../__compass/sass/_tech.sass */
 #techinfo #cont .active_1,
 #techinfo a .active_1 {
   background-color: rgba(51, 36, 28, 0.2);
@@ -989,7 +993,7 @@ header #cont.collnav ul li a:hover {
   width: auto;
   margin-bottom: 5px;
 }
-/* line 64, ../__compass/sass/_tech.sass */
+/* line 68, ../__compass/sass/_tech.sass */
 #techinfo #cont h2,
 #techinfo a h2 {
   font-family: "Roboto", serif;
@@ -1001,13 +1005,13 @@ header #cont.collnav ul li a:hover {
   padding-bottom: 10px;
   border-bottom: 1px dotted white;
 }
-/* line 73, ../__compass/sass/_tech.sass */
+/* line 77, ../__compass/sass/_tech.sass */
 #techinfo #cont.info {
   width: 1224px;
   left: 50%;
   padding-bottom: 50px;
 }
-/* line 77, ../__compass/sass/_tech.sass */
+/* line 81, ../__compass/sass/_tech.sass */
 #techinfo #cont.info #outcont {
   width: 63.2%;
   height: auto;
@@ -1016,7 +1020,7 @@ header #cont.collnav ul li a:hover {
   padding-bottom: 25px;
   float: left;
 }
-/* line 85, ../__compass/sass/_tech.sass */
+/* line 89, ../__compass/sass/_tech.sass */
 #techinfo #cont.info #outcont #techcont {
   display: block;
   width: 45%;
@@ -1026,7 +1030,7 @@ header #cont.collnav ul li a:hover {
   margin-right: 2.5%;
   float: left;
 }
-/* line 93, ../__compass/sass/_tech.sass */
+/* line 97, ../__compass/sass/_tech.sass */
 #techinfo #cont.info #techimg {
   position: relative;
   height: 400px;
@@ -1035,7 +1039,7 @@ header #cont.collnav ul li a:hover {
   top: 40px;
   text-align: center;
 }
-/* line 101, ../__compass/sass/_tech.sass */
+/* line 105, ../__compass/sass/_tech.sass */
 #techinfo #cont.info #techimg img {
   height: 100%;
   margin: auto;

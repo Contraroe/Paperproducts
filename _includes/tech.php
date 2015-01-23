@@ -5,6 +5,7 @@
 	<div id="cont" class="techmainnav">
 		<?php
 			GetTech ();
+			GetTechNew ();
 		?>
 	</div>
 	<div id="cont" class="info">

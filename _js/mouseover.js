@@ -14,4 +14,3 @@ function rolloutpng(id,coll_id,coll_sub_id,type_id) {
 	document.getElementById('1_2').href = 'collections.php?coll_id='  +  coll_id + '&coll_sub_id=' + coll_sub_id + '&type_id=' + type_id;
 
 }
-
