@@ -120,30 +120,17 @@
 		$j=3;
 		while ( $j < 16 ) {
 			if ( $row[$j] == NULL ) {}else{
-		// zonder mouseover
-		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg'/></a></li>";
-		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.png' id='1_1_C' onmouseover='rolloverpng(1,\"".$row[$j] . "\")' /></a></li>";
-		//	echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)' /></a></li>";
-		// RR 21/01/2015 met mouseover en met a href en zonder onclick
-		// echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'><img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C' onmouseover='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  /></a></li>";
-		//echo "<li><a href='collections.php?coll_id=$coll_id&coll_sub_id=$row[$j]&type_id=$type_id'>
-		// 	onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  is niet nodig
 		echo "<li>
-					<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C'
-					    onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  />
-			  </li>";
+				<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C'
+				onclick='rolloverpng(1,$coll_id,\"".$row[$j] . "\",$type_id)'  />
+		</li>";
 
 			}
 			$j = $j + 2;
 		}
 
 		echo "</ul>";
-		//  zonder mouseover
-		//	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
-		// RR 20/01/2015 met mouseover
-		//   echo "<div id='coverimg'><a href='collections.php?coll_id=$coll_id&coll_sub_id=". $coll_sub_id . "&type_id=$type_id' id='1_2'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
-		// met mouseover zonder a href
-  	       echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
+  	      	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
 	}
 
 	function ActiveType ($type_id) {
@@ -196,33 +183,6 @@
 		};
 
 		echo "</ul>";
-	}
-
-	function GetTechNew () {
-		include "_php/db_config.php";
-		include "_php/db_connect.php";
-		include "_functions/variables.php";
-
-		$typesActive = mysqli_query ($connect, " SELECT Notebloc, Wirebloc, Writer, LBook, Vbook, Scribble FROM collections WHERE coll_id = $coll_id");
-		$aTypeAct= mysqli_fetch_row($typesActive);
-		PrintArr($aTypeAct);
-
-		//  LIST POSIBLE FINISHING TYPES
-		$types = mysqli_query($connect, " SELECT type_id, type_name FROM finishing ");
-		echo "<ul id='techtypecont'>";
-		$ty = 0;
-		while ( $row = mysqli_fetch_assoc($types)) {
-			$aTypes[] = $row;
-			$type_name = $aTypes[$ty]['type_name'];
-			$type_id = $aTypes[$ty]['type_id'];
-			echo "<li class=''><a href=''>" . $type_name . "</a></li>";
-			$ty++;
-		}
-		echo "</ul>";
-		PrintArr ($aTypes);
-
-		$aCombi = array_merge_recursive($aTypeAct, $aTypes);
-		PrintArr ($aCombi);
 	}
 
 	function TechDetOne ($type_id) {
@@ -323,6 +283,117 @@
 		//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
 	    echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
 	}
+
+
+
+	function GetTechNew () {
+		include "_php/db_config.php";
+		include "_php/db_connect.php";
+		include "_functions/variables.php";
+
+		//  LIST POSIBLE FINISHING TYPES
+		$types = mysqli_query($connect, "	SELECT *
+							FROM coll_types_pos
+								INNER JOIN finishing
+									ON coll_types_pos.type_id = finishing.type_id
+								INNER JOIN inside
+									ON coll_types_pos.type_id = inside.type_id
+								INNER JOIN cover
+									ON coll_types_pos.type_id = cover.type_id
+							WHERE coll_id = $coll_id
+							AND state = 1" );
+
+		echo "<ul id='techtypecont'>";
+
+		$ty = 0;
+		while ( $row = mysqli_fetch_assoc($types)) {
+			$aTypes[] = $row;
+			$type_name = $aTypes[$ty]['type_name'];
+			$type_id = $aTypes[$ty]['type_id'];
+
+			echo "<li><a onclick='techdatachange(" . $ty . ")'>" . $type_name . "</a></li>";
+			$ty++;
+		}
+		echo "</ul>";
+		// PrintArr ($aTypes);
+
+
+		$num_row = mysqli_num_rows($types);
+
+
+
+		$type_var = 0;
+
+		echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
+
+		while ($type_var < $num_row) {
+
+			if ($aTypes[$type_var]['type_size'] == "A4" ) {
+				$test = "";
+			} elseif ($aTypes[$type_var]['type_size']== "A4 / A5") {
+				$test = "";
+			} else {
+				$test = " mm";
+			}
+
+			$index = " index_". $type_var;
+			echo"<div id='cont' class='info" . $index . "'>";
+
+				echo "<div id='outcont'>";
+					echo "<div id='techcont'>";
+						echo "<h2>Size</h2>" ;
+						echo "<div id='tech' class='a_1 active_1'>" . html_entity_decode($aTypes[$type_var]['type_size']) . $test . "</div>";
+					echo "</div>";
+					echo "<div id='techcont'>";
+						echo "<h2>Binding</h2>";
+						echo "<div id='tech' class='b_1 active_" . html_entity_decode($aTypes[$type_var]['type_bind_glue']) . "'>Glued</div>";
+						echo "<div id='tech' class='b_2 active_" . html_entity_decode($aTypes[$type_var]['type_bind_wire']) . "'>Wire-O</div>";
+						echo "<div id='tech' class='b_3 active_" . html_entity_decode($aTypes[$type_var]['type_bind_genaaid']) . "'>Sewn</div>";
+					echo "</div>";
+					echo "<div id='techcont'>";
+						echo "<h2>Corner</h2>" ;
+						echo "<div id='tech' class='active_1'>Straight corners</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_corner_option']) . "'>Rounded corners</div>";
+					echo "</div>";
+					echo "<div id='techcont'>";
+						echo "<h2>Cover</h2>" ;
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_fl']) . "'>Flap left</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_d']) . "'>Double</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_s']) . "'>Softcover</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_h']) . "'>Hardcover</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_l']) . "'>Leather</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_c']) . "'>Cardboard</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_ls']) . "'>Linnen Softcover</div>";
+					echo "</div>";
+					if ($aTypes[$type_var]['type_id'] = 1 | 2 | 3 | 4){
+						echo "<div id='techcont'>";
+							echo "<h2>Cover extra finishing</h2>" ;
+							echo "<div id='tech' class='active_1'>Softtouch plastification</div>";
+						echo "</div>";
+					} else {};
+					echo "<div id='techcont'>";
+						echo "<h2>Layout</h2>" ;
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Lines']) . "'>Lines</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Squares']) . "'>Squares</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Lines / Notebook']) . "'> Lines / Notebook</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Notes right / Diary left']) . "'>Notes right / Diary left</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Academic Diary']) . "'>Academic Diary</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Note right / Academic Diary left']) . "'>Note right / Academic Diary left</div>";
+					echo "</div>";
+				echo "</div>";
+				
+			echo "</div>";
+
+
+			$type_var++;
+		}
+		
+	}
+
+
+
+
+
 // NAVIGATION GLOBAL
 	function PrevColl ($coll_id,$coll_atel){
 		include "_functions/variables.php";

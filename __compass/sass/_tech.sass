@@ -2,7 +2,7 @@
 	min-height: auto
 	background: $turk_10
 	color: $wit_10
-	padding-bottom: 100px
+	padding-bottom: 50px
 	box-shadow: 0px -20px 30px $zwart_10
 	z-index: 99
 	h1
@@ -45,9 +45,24 @@
 				&:hover,
 				&.active
 					color: $wit_10
+	#cont.techmainnav
+		#techimg
+			position: inherit
+			height: 400px
+			width: 350px
+			margin-right: 5%
+			// top: -400px  //TIJDELIJKE VERSIE / NORMAL 120px
+			margin-top: 100px
+			text-align: center
+			float: right
+			img
+				height: 100%
+				margin: auto
+				border-radius: 5px
+				box-shadow: 5px 5px 20px $zwart_8
 		#techtypecont
-			.activeType0
-				display: none
+			li.active
+				background-color: $bruin_10
 	#cont
 		background-color: $none
 	#cont,
@@ -75,11 +90,13 @@
 			padding-bottom: 10px
 			border-bottom: 1px dotted $wit_10
 	#cont.info
-		width: 1224px
 		left: 50%
 		padding-bottom: 50px
+		float: left
+		margin-top: -430px
 		#outcont
 			width: 63.2%
+			min-height: 550px
 			height: auto
 			padding-bottom: 5px
 			overflow: hidden
@@ -89,23 +106,9 @@
 			#techcont
 				display: block
 				width: 45%
+				min-height: 155px
 				height: auto
 				padding: 0
 				margin-left: 2.5%
 				margin-right: 2.5%
 				float: left
-		#techimg
-			position: relative
-			height: 400px
-			width: auto
-			margin-right: 5%
-			top: 40px  //TIJDELIJKE VERSIE / NORMAL 120px
-			// margin-top: -300px
-			text-align: center
-			img
-				height: 100%
-				margin: auto
-				border-radius: 5px
-				box-shadow: 5px 5px 20px $zwart_8
-
-

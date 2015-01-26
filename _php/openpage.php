@@ -28,6 +28,7 @@
 	<!-- the jScrollPane script -->
 	<script type="text/javascript" src="_js/scrollbars/jquery.jscrollpane.min.js"></script>
 	<script type="text/javascript" src="_js/mouseover.js"></script>
+	<script type="text/javascript" src="_js/tech_nav.js"></script>
 <body>
 <?php include "_php/error.php" ?>
 <?php include "_includes/socialinfo.php" ?>
