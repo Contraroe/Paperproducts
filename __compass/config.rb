@@ -7,7 +7,7 @@ sass_dir = "sass"           #where our .scss files are
 images_dir = "../_img"    #the folder with your images
 
 # You can select your preferred output style here (can be overridden via the command line):
-output_style = :expanded  #After dev :compressed or : expanded
+output_style = :compressed #After dev :compressed or : expanded
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = true
