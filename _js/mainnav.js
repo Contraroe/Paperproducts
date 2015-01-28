@@ -49,6 +49,12 @@ $(document).ready(function() {
 
 // TECHNICAL PART
 
-	 $('.active_0').hide();
+	$('.active_0').hide();
+
+	$('.contact').click(function(){
+		$('html, body').animate({
+			scrollTop: $("#formcont").offset().top
+			}, 2000);
+	 });
 
 });

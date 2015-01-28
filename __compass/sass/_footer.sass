@@ -1,20 +1,155 @@
 #footer
+	position: absolute
+	width: 100%
 	height: auto
-	background-color: $zwart_10
-	text-align: center
-	#map
-		width: 100%!important
+	overflow: hidden
+	background-color: $turk_10
+	box-shadow: inset 0px -50px 60px $bruin_5
+	#contmap
+		width: 100%
 		height: 400px
-		border-bottom: 1px solid $wit_10
-		#mapcont
-			width: 100%!important
-			height: 100%!important
-			#gmap_canvas
-				width: 120%!important
-				height: 120%!important
+		color: $zwart_10
+		z-index: 99
+		#map
+			position: relative
+			box-shadow: inset 0px 30px 20px $zwart_4
+			overflow: hidden
+			height: 100%
+			width: 100%
+			#mapcont
+				position: relative
+				margin-left: 0px
+				height: 100%
+				width: 100%
+				background-color: $zwart_3
+				#gmap_canvas
+					position: relative
+					height: 105%
+					width: 105%
 	#cont
-		width: 1224px
-		height: 200px
-		margin: auto
-		overflow: auto
-		background-color: $zwart_10
+		height: auto
+		width: 100%
+		background-color: $zwart_5
+		border-bottom: 10px solid $turk_5
+		padding-bottom: 50px
+		#fcont
+			height: auto
+			width: 1224px
+			color: $wit_8
+			margin: auto
+			padding-top: 50px
+			padding-bottom: 100px
+			font-family: $title
+			.test
+				width: 25%
+				float: left
+				text-align: right
+				padding-right: 20px
+				h1
+					display: inline
+					background-color: $turk_10
+					font-size: 120%
+					padding: 5px 10px
+					color: $bruin_5
+					font-family: $title
+					b
+						color: $wit_10
+						font-weight: 800
+				p
+					font-size: 80%
+					line-height: 20px
+					margin-top: 30px
+					font-family: $body
+					padding-left: 10px
+					b
+						color: $turk_10
+						font-weight: 800
+			#formcont
+				@extend .test
+				width: 70%
+				float: left
+				text-align: left
+				#form
+					width: 100%!important
+					// background-color: $wit_2
+					margin-top: 10px
+					position: relative
+					#check
+						visibility: hidden
+					label
+						display: inline
+						font-family: $body
+						font-size: 80%
+						padding: 2px 5px 10px 5px
+						margin-top: -20px
+					input
+						background-color: $wit_1
+						width: 30%
+						font-family: $body
+						font-size: 90%
+						padding: 2px 5px
+						border: none
+						color: $bruin_10
+						margin-top: 5px
+						margin-bottom: 10px
+						border-radius: 2px
+						color: $wit_10
+						font-size: 82%
+						padding: 6px 10px
+						&:focus
+							outline: none !important
+							background-color: $turk_8
+							box-shadow: 0 0 10px $turk_8
+					textarea
+						float: left
+						margin-top: 24px
+						font-family: $body
+						background-color: $wit_1
+						margin-right: 20px
+						border: none
+						border-radius: 2px
+						color: $wit_10
+						font-size: 82%
+						padding: 10px
+						line-height: 20px
+						resize: none
+						&:focus
+							outline: none !important
+							background-color: $turk_8
+							box-shadow: 0 0 10px $turk_8
+					input[type='submit'],
+					input[type='reset']
+						width: 126px
+						background-color: $wit_1
+						color: $wit_10
+						margin-top: 15px
+						font-weight: 800
+						&:hover
+							background-color: $turk_10
+							color: $wit_10
+					input[type='submit']
+						margin-right: 20px
+						background-color: $wit_1
+					input[type='reset']
+						background-color: $wit_1
+						&:hover
+							background-color: $bruin_5
+							color: $turk_10
+
+
+
+
+
+
+
+
+
+// - Google Maps
+// a[href^="http://maps.google.com/maps"]
+// 	display: none !important
+
+// .gmnoprint a, .gmnoprint span
+// 	display: none
+
+// .gmnoprint div
+// 	background-color: none !important

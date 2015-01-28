@@ -7,7 +7,7 @@ $database="drukkqf12_products";
 
 // Online LANNOO-PRINT
 // $dbhost="localhost";
-// $dbuser="drukkqf12_oc1";
+// $dbuser="drukkqf12_pp";
 // $dbpass="w8rsyn0y";
-// $database="drukkqf12_oc1";
+// $database="drukkqf12_products";
 ?>

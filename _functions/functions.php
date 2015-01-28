@@ -9,7 +9,7 @@
 		echo "<div id='cont' class='mainnav'><ul>
 				<li class='home'><a href='index.php'>Home</a></li>
 				<li class='colltoggle'>Collections</li>
-				<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
+				<li class='contact'>Contact</li>
 
 			</ul></div>
 			<div id='border'></div>
@@ -45,7 +45,7 @@
 		echo "<div id='cont' class='mainnav'><ul>
 				<li class='home'><a href='index.php'>Home</a></li>
 				<li class='colltoggle'>Collections</li>
-				<li class='contact'><a href='mailto:info@lannoopaperproducts.be'>Contact</a></li>
+				<li class='contact'>contact</li>
 
 			</ul></div>
 			<div id='border'></div>

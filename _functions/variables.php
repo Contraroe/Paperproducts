@@ -1,6 +1,7 @@
 <?php 
 	$coll_id = $_REQUEST['coll_id'];
 
+
 	global  $coll_atel;
 
 	if (isset($_REQUEST['coll_sub_id'])) {
