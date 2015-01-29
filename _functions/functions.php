@@ -115,6 +115,7 @@
 
 
 		echo "<ul id='picker'>";
+		
 
 		$j=3;
 		while ( $j < 25 ) {
@@ -129,7 +130,13 @@
 		}
 
 		echo "</ul>";
-  	      	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_1'  /></div>";
+		if ($coll_id == 12 ) {
+			$ext = ".gif";
+		} else {
+			$ext = ".jpg";
+		}
+		
+  	      	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . $ext . "' id='1_1'  /></div>";
 	}
 
 	function ActiveType ($type_id) {
@@ -182,7 +189,13 @@
 
 		$type_var = 0;
 
-		echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
+		if ($coll_id == 12 ) {
+			$ext = ".gif";
+		} else {
+			$ext = ".jpg";
+		}
+
+		echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . $ext . "' id='1_3'  /></div>";
 
 		while ($type_var < $num_row) {
 
