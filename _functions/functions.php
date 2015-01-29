@@ -173,7 +173,7 @@
 			$ty++;
 		}
 		echo "</ul>";
-		
+		// PrintArr($types);
 
 
 		$num_row = mysqli_num_rows($types);
@@ -247,6 +247,7 @@
 						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Notes right / Diary left']) . "'>Notes right / Diary left</div>";
 						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Academic Diary']) . "'>Academic Diary</div>";
 						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Note right / Academic Diary left']) . "'>Note right / Academic Diary left</div>";
+						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Blanco']) . "'>Blanco / Sticker Sheet</div>";
 					echo "</div>";
 				echo "</div>";
 				
