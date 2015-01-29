@@ -85,7 +85,6 @@
 		echo $row[2] ;
 	}
 // DESIGN INFO
-
 	function GetDesign ($coll_id, $coll_sub_id) {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
@@ -118,7 +117,7 @@
 		echo "<ul id='picker'>";
 
 		$j=3;
-		while ( $j < 16 ) {
+		while ( $j < 25 ) {
 			if ( $row[$j] == NULL ) {}else{
 		echo "<li>
 				<img src='_img/color/" . $row[$j] . "_C.jpg' id='1_1_C'
@@ -145,147 +144,6 @@
 		echo $row[0] ;
 	}
 // TECHNICAL INFO
-	function GetTech () {
-		include "_php/db_config.php";
-		include "_php/db_connect.php";
-		include "_functions/variables.php";
-
-		echo "<ul id='techtypecont'>";
-
-		$techtype = mysqli_query($connect, " SELECT type_name , type_id FROM finishing ");
-		$num = mysqli_num_rows ($techtype);
-
-		$i=0;
-		$b=4;
-		$active = "active";
-		$test = $type_id;
-
-		$techactive = mysqli_query($connect, " SELECT * FROM collections WHERE coll_id = $coll_id ");
-		$row2 = mysqli_fetch_row($techactive);
-
-		while ($i < $num) {
-			mysqli_data_seek($techtype,$i);
-			$row=mysqli_fetch_row($techtype);
-			$type_name=html_entity_decode($row[0]);
-			$type_id=html_entity_decode($row[1]);
-
-			if ($test == $row[1]) {
-				$active = "active";
-			} else {
-				$active = "no";
-			};
-
-			echo "<li class='pos_" . $row2[$b] . "'><a  class='". $active . " pos_" . $row2[$b] . "' href='collections.php?coll_id=$coll_id&coll_sub_id=$coll_sub_id&type_id=$type_id&coll_atel=$coll_atel#techinfo'>" . $type_name . "</a></li>";
-
-			$i++;
-			$b++;
-
-		};
-
-		echo "</ul>";
-	}
-
-	function TechDetOne ($type_id) {
-		include "_php/db_config.php";
-		include "_php/db_connect.php";
-
-		include "_functions/variables.php";
-
-		$techtype = mysqli_query($connect, " SELECT *
-							FROM finishing
-							INNER JOIN cover ON finishing.type_id = cover.type_id
-							WHERE finishing.type_id = $type_id");
-		mysqli_close($connect);
-
-		$num =mysqli_num_rows($techtype);
-		$row=mysqli_fetch_row($techtype);
-
-		// MM or NOT
-		if ($row[3] == "A4" ) {
-			$test = "";
-		} elseif ($row[3] == "A4 / A5") {
-			$test = "";
-		} else {
-			$test = " mm";
-		}
-
-		// PLASTIFICATION ???
-		$plast = 1;
-		if ($type_id == 4 | $type_id == 5){
-			$plast = 0;
-		} else {
-			$plast =1;
-		}
-
-
-
-		echo "<div id='outcont'>";
-		echo "<div id='techcont'>";
-			echo "<h2>Size</h2>" ;
-			echo "<div id='tech' class='active_1'>" . html_entity_decode($row[3]) . $test . "</div>";
-		echo "</div>";
-		echo "<div id='techcont'>";
-			echo "<h2>Binding</h2>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'>Glued</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'>Wire-O</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Sewn</div>";
-		echo "</div>";
-		echo "<div id='techcont'>";
-			echo "<h2>Corner</h2>" ;
-			echo "<div id='tech' class='active_1'>Straight corners</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Rounded corners</div>";
-		echo "</div>";
-		echo "<div id='techcont'>";
-			echo "<h2>Cover</h2>" ;
-			echo "<div id='tech' class='active_" . html_entity_decode($row[11]) . "'>Flap left</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[12]) . "'>Double</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[13]) . "'>Softcover</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[14]) . "'>Hardcover</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[15]) . "'>Leather</div>";
-			if ($coll_id == 10) {
-				echo "<div id='tech' class='active_" . html_entity_decode($row[16]) . "'>Cardboard</div>";
-			} else {};
-			echo "<div id='tech' class='active_" . html_entity_decode($row[17]) . "'>Linnen Softcover</div>";
-		echo "</div>";
-
-		if ($plast == 1) {
-			echo "<div id='techcont'>";
-		echo "<h2>Cover extra finishing</h2>" ;
-		echo "<div id='tech' class='active_" . $plast . "'>Softtouch plastification</div>";
-		echo "</div>";
-		} else {};
-	}
-
-	function TechDetTwo ($type_id) {
-		include "_php/db_config.php";
-		include "_php/db_connect.php";
-
-		include "_functions/variables.php";
-
-		$techtype = mysqli_query($connect, " SELECT *
-							FROM inside
-							WHERE type_id =$type_id");
-		mysqli_close($connect);
-
-		$num =mysqli_num_rows($techtype);
-		$row=mysqli_fetch_row($techtype);
-
-		echo "<div id='techcont'>";
-			echo "<h2>Layout</h2>" ;
-			echo "<div id='tech' class='active_" . html_entity_decode($row[2]) . "'>Lines</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[3]) . "'>Squares</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[4]) . "'> Lines / Notebook</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[5]) . "'>Notes right / Diary left</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[6]) . "'>Academic Diary</div>";
-			echo "<div id='tech' class='active_" . html_entity_decode($row[7]) . "'>Note right / Academic Diary left</div>";
-		echo "</div>";
-		echo "</div>";
-		//	echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg'/></div>";
-	    echo "<div id='techimg'><img src='_img/collections/" . $coll_sub_id . ".jpg' id='1_3'  /></div>";
-	}
-
-
-
 	function GetTechNew () {
 		include "_php/db_config.php";
 		include "_php/db_connect.php";
@@ -315,7 +173,7 @@
 			$ty++;
 		}
 		echo "</ul>";
-		// PrintArr ($aTypes);
+		
 
 
 		$num_row = mysqli_num_rows($types);
@@ -365,7 +223,17 @@
 						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_c']) . "'>Cardboard</div>";
 						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['type_cover_ls']) . "'>Linnen Softcover</div>";
 					echo "</div>";
-					if ($aTypes[$type_var]['type_id'] = 1 | 2 | 3 | 4){
+					if ($aTypes[$type_var]['type_id'] == 2 ){
+						echo "<div id='techcont'>";
+							echo "<h2>Cover extra finishing</h2>" ;
+							echo "<div id='tech' class='active_1'>Softtouch plastification</div>";
+						echo "</div>";
+					} elseif ($aTypes[$type_var]['type_id'] == 3 ){
+						echo "<div id='techcont'>";
+							echo "<h2>Cover extra finishing</h2>" ;
+							echo "<div id='tech' class='active_1'>Softtouch plastification</div>";
+						echo "</div>";
+					} elseif ($aTypes[$type_var]['type_id'] == 6 ){
 						echo "<div id='techcont'>";
 							echo "<h2>Cover extra finishing</h2>" ;
 							echo "<div id='tech' class='active_1'>Softtouch plastification</div>";
@@ -389,11 +257,6 @@
 		}
 		
 	}
-
-
-
-
-
 // NAVIGATION GLOBAL
 	function PrevColl ($coll_id,$coll_atel){
 		include "_functions/variables.php";
