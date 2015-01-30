@@ -115,7 +115,7 @@
 
 
 		echo "<ul id='picker'>";
-		
+
 
 		$j=3;
 		while ( $j < 25 ) {
@@ -135,7 +135,7 @@
 		} else {
 			$ext = ".jpg";
 		}
-		
+
   	      	echo "<div id='coverimg'><img src='_img/collections/" . $coll_sub_id . $ext . "' id='1_1'  /></div>";
 	}
 
@@ -263,13 +263,13 @@
 						echo "<div id='tech' class='active_" . html_entity_decode($aTypes[$type_var]['Blanco']) . "'>Blanco / Sticker Sheet</div>";
 					echo "</div>";
 				echo "</div>";
-				
+
 			echo "</div>";
 
 
 			$type_var++;
 		}
-		
+
 	}
 // NAVIGATION GLOBAL
 	function PrevColl ($coll_id,$coll_atel){
@@ -286,12 +286,12 @@
 		if (isset($aCollection[$prev_coll_atel])) {
 			$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
 			$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
-			echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+			echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'><div id='imgnav' class='imgprev'></div>" . $aCollection[$prev_coll_atel]['coll_name'] . " <b>Collection</b></a>";
 		} else {
 			$prev_coll_atel = endKey($aCollection);
 			$prev_sub_id = $aCollection[$prev_coll_atel]['coll_id'] . "_1";
 			$prev_coll_id = $aCollection[$prev_coll_atel]['coll_id'];
-			echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'>" . $aCollection[$prev_coll_atel]['coll_name'] . "</a>";
+			echo "<a href='collections.php?coll_id=$prev_coll_id&coll_sub_id=$prev_sub_id&coll_atel=$prev_coll_atel'><div id='imgnav' class='imgprev'></div>" . $aCollection[$prev_coll_atel]['coll_name'] . " <b>Collection</b></a>";
 		}
 	}
 
@@ -304,12 +304,12 @@
 		if (isset($aCollection[$next_coll_atel])) {
 			$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
 			$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
-			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'><div id='imgnav' class='imgnext'></div>" . $aCollection[$next_coll_atel]['coll_name'] . " <b>Collection</b></a>";
 		} else {
 			$next_coll_atel = 0;
 			$next_sub_id = $aCollection[$next_coll_atel]['coll_id'] . "_1";
 			$next_coll_id = $aCollection[$next_coll_atel]['coll_id'];
-			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'>" . $aCollection[$next_coll_atel]['coll_name'] . "</a>";
+			echo "<a href='collections.php?coll_id=$next_coll_id&coll_sub_id=$next_sub_id&coll_atel=$next_coll_atel'><div id='imgnav' class='imgnext'></div>" . $aCollection[$next_coll_atel]['coll_name'] . " <b>Collection</b></a>";
 		}
 	}
 // DEVELOPMENT

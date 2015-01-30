@@ -3,11 +3,15 @@
 	height: 900px //TIJDELIJKE VERSIE / NORMAL 900px
 	overflow: hidden
 	box-shadow: inset 0px -30px 50px $zwart_10
+	@media #{$ipad}
+		height: 650px
 	#cont.colltitle
 		position: relative
 		background-color: $none
 		height: 100%
 		overflow: hidden
+		@media #{$ipad}
+			width: 100%
 		// box-shadow: inset 0px -10px 20px $zwart_2
 		ul
 			position: absolute
@@ -24,13 +28,18 @@
 			transform:  rotate(10deg)
 			box-shadow: -15px 20px 20px $zwart_8
 			background-color: $pms
-			overflow-y: scroll
+			overflow-y: auto
 			padding-bottom: 30px
+			@media #{$ipad}
+				height: 290px
 			li
 				float: none
 				height: 40px
 				margin-bottom: 20px
 				width: 130px
+				@media #{$ipad}
+					width: 80px
+					height: 25px
 				&:hover
 					opacity: 0.2
 				a
@@ -46,6 +55,10 @@
 			transform:  rotate(3deg)
 			left: -25px
 			bottom: -200px
+			overflow-x: none
+			overflow-y: none
+			@media #{$ipad}
+				height: auto
 			li
 				margin-right: 5px
 				cursor: default
@@ -90,6 +103,9 @@
 			// margin-top: -300px
 			text-align: center
 			display: none
+			@media #{$ipad}
+				height: 400px
+				margin-right: 5%
 			img
 				height: 100%
 				margin: auto
@@ -111,6 +127,8 @@
 			padding-left: 20px
 			margin-bottom: 50px
 			display: none
+			@media #{$ipad}
+				margin-left: 20px
 			span
 				display: block
 				font-size: 30%
@@ -142,6 +160,7 @@
 			transform: rotate(90deg)
 			z-index: 20
 			cursor: pointer
+
 			&:before
 				content: '>'
 			&:hover

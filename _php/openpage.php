@@ -9,7 +9,7 @@
 	<title>Lannoo Paper Products</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="_css/global.css" rel="stylesheet" type="text/css" />
 	<link href="_css/normalize.css" rel="stylesheet" type="text/css" />

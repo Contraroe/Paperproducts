@@ -5,6 +5,8 @@
 	padding-bottom: 50px
 	box-shadow: 0px -20px 30px $zwart_10
 	z-index: 99
+	@media #{$ipad}
+		width: 100%
 	h1
 		margin-top: 120px
 		font-family: $title
@@ -14,6 +16,9 @@
 		border-bottom: 1px dotted $wit_5
 		text-transform: uppercase
 		padding-left: 15px
+		@media #{$ipad}
+			text-indent: 20px
+			margin-top: 80px
 		span
 			color: $bruin_10
 			font-weight: 100
@@ -24,6 +29,10 @@
 	#cont.techmainnav
 		height: auto
 		margin-bottom: 60px
+		@media #{$ipad}
+			margin-left: 20px
+			margin-bottom: 20px
+			width: auto
 		ul li
 			display: block
 			height: auto
@@ -37,7 +46,7 @@
 				display: block
 				width: 100%
 				height: 100%
-				font-family: $title 
+				font-family: $title
 				font-weight: 300
 				font-size: 140%
 				text-transform: uppercase
@@ -55,16 +64,23 @@
 			margin-top: 100px
 			text-align: center
 			float: right
+			@media #{$ipad}
+				margin-right: 20px
+				margin-top: 50px
 			img
 				height: 100%
 				margin: auto
 				border-radius: 5px
 				box-shadow: 5px 5px 20px $zwart_8
 		#techtypecont
+			@media #{$ipad}
+				width: 100%
 			li.active
 				background-color: $bruin_10
 	#cont
 		background-color: $none
+		@media #{$ipad}
+			width: 100%
 	#cont,
 	a
 		color: $wit_10
@@ -89,6 +105,8 @@
 			margin-bottom: 10px
 			padding-bottom: 10px
 			border-bottom: 1px dotted $wit_10
+			@media #{$ipad}
+				margin-top: 15px
 	#cont.info
 		left: 50%
 		padding-bottom: 50px
@@ -103,6 +121,8 @@
 			// background-color: $bruin_1
 			padding-bottom: 25px
 			float: left
+			@media #{$ipad}
+				width: 60%
 			#techcont
 				display: block
 				width: 45%
@@ -112,3 +132,5 @@
 				margin-left: 2.5%
 				margin-right: 2.5%
 				float: left
+				@media #{$ipad}
+					min-height: 140px
